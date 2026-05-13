@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="portfolio.html">Portfolio</a>
+                <a class="nav-link active" href="contact.html">Contact</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTACT SECTION -->
+<section class="container mt-5 pt-5">
+    <h1 class="text-center mb-4">Contact Me</h1>
+
+    <!-- ALERT AREA -->
+    <div id="alertArea"></div>
+
+    <div class="row g-4">
+
+        <!-- FORM -->
+        <div class="col-md-7">
+            <div class="card shadow p-4">
+                <h4 class="mb-3">Send a Message</h4>
+
+                <form class="needs-validation" novalidate id="contactForm">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nama *</label>
+                        <input type="text" class="form-control" required>
+                        <div class="invalid-feedback">Nama wajib diisi.</div>
+                        <div class="valid-feedback">Nama sudah benar.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-control" required>
+                        <div class="invalid-feedback">Email tidak valid.</div>
+                        <div class="valid-feedback">Email valid.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">No HP *</label>
+                        <input type="tel" class="form-control" required>
+                        <div class="invalid-feedback">Nomor HP wajib diisi.</div>
+                        <div class="valid-feedback">Nomor HP valid.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Subjek *</label>
+                        <select class="form-select" required>
+                            <option value="">-- Pilih subjek --</option>
+                            <option>Kerja sama</option>
+                            <option>Promosi</option>
+                            <option>Tanya-tanya</option>
+                        </select>
+                        <div class="invalid-feedback">Silakan pilih subjek.</div>
+                        <div class="valid-feedback">Subjek dipilih.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Pesan *</label>
+                        <textarea class="form-control" rows="4" required></textarea>
+                        <div class="invalid-feedback">Pesan tidak boleh kosong.</div>
+                        <div class="valid-feedback">Pesan siap dikirim.</div>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                        <label class="form-check-label" for="termsCheck">
+                            I agree to terms and conditions *
+                        </label>
+                        <div class="invalid-feedback">Harus dicentang.</div>
+                        <div class="valid-feedback">Terima kasih.</div>
+                    </div>
+
+                    <button class="btn btn-primary w-100" type="submit" id="submitBtn" disabled>
+                        Submit
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- CONTACT INFO + MAP -->
+        <div class="col-md-5">
+            <div class="card shadow p-4">
+                <h4 class="mb-3">Contact Information</h4>
+
+                <p><strong>Alamat:</strong><br>Kota Padang</p>
+                <p><strong>Phone:</strong><br>+62 83836913232</p>
+                <p><strong>Email:</strong><br>sasyaazmr@gmail.com</p>
+
+                <p><strong>Social Media:</strong></p>
+                <ul>
+                    <li><a href="https://www.instagram.com/sasyaaazmr/">Instagram</a></li>
+                </ul>
+
+                <!-- GOOGLE MAPS EMBED -->
+                <div class="mt-4">
+                    <h6 class="fw-bold mb-2">Lokasi</h6>
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps?q=Padang,Sumatera+Barat&output=embed"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER INFO -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>
+                    Website Portofolio.
+                </p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="border-secondary">
+
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">
+                Instagram
+            </a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const alertArea = document.getElementById('alertArea');
+
+    function showAlert(type, message) {
+        alertArea.innerHTML = `
+            <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        `;
+    }
+
+    form.addEventListener('input', () => {
+        if (form.checkValidity()) {
+            submitBtn.removeAttribute('disabled');
+        } else {
+            submitBtn.setAttribute('disabled', true);
+        }
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        form.classList.add('was-validated');
+
+        if (!form.checkValidity()) {
+            showAlert("danger", "❌ Form gagal dikirim. Periksa kembali data yang belum valid.");
+            return;
+        }
+
+        if (!document.getElementById('termsCheck').checked) {
+            showAlert("warning", "⚠️ Harap setujui terms and conditions terlebih dahulu.");
+            return;
+        }
+
+        showAlert("success", "✅ Pesan berhasil dikirim. Terima kasih sudah menghubungi saya!");
+
+        form.reset();
+        form.classList.remove('was-validated');
+        submitBtn.setAttribute('disabled', true);
+    });
+</script>
+
+</body>
+</html>

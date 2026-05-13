@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-section {
+            padding: 100px 0;
+        }
+        .about-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .about-img {
+            width: 100%;
+            max-width: 260px;
+            border-radius: 50%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        h2, h3 {
+            font-weight: 700;
+        }
+        p {
+            line-height: 1.7;
+        }
+        .skill-badge {
+            background: #ffd54f;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+               <a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="about.html">About</a>
+<a class="nav-link" href="portfolio.html">Portfolio</a>
+<a class="nav-link" href="contact.html">Contact</a>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+            <div class="col-md-4 text-center mb-4">
+                <img src="images/profil.jpg" alt="Foto Profil" class="about-img">
+            </div>
+
+            <div class="col-md-7">
+                <div class="about-card">
+                    <h2 class="mb-3">About Me</h2>
+                    <p class="lead">
+                        AloOo! Aku <strong>Sasya Zamora</strong>, mahasiswi Informatika angkatan 2024 yang suka eksplor dunia teknologi, desain, dan web development.
+                    </p>
+                    <p>
+                        Aku tipe orang yang lebih suka belajar langsung lewat praktik. Jadi setiap nemu hal baru, biasanya langsung aku coba lewat project-project kecil biar lebih paham. Aku juga cukup peduli sama tampilan, karena menurutku desain yang rapi dan enak dilihat itu punya pengaruh besar ke kenyamanan pengguna saat pakai sebuah aplikasi atau website.
+                    </p>
+                    <p>
+                        Ke depannya, aku pengen jadi mahasiswi Informatika yang nggak cuma ngerti secara teknis, tapi juga bisa bikin karya yang punya nilai dan beneran kepake. Karena itu, aku terus berusaha belajar hal-hal baru di dunia teknologi sambil pelan-pelan ngebangun portofolio yang bisa nunjukin kemampuan aku.
+                    </p>
+                    <p>
+                        Selain fokus ke akademik, aku juga aktif ikut kegiatan kampus dan organisasi. Dari situ aku banyak belajar soal kerja tim, komunikasi, dan gimana ngatur waktu dengan baik, apalagi kalau harus bagi waktu antara kuliah, kegiatan, dan project.
+                    </p>
+                    <p>
+                       Saat ini, kemampuan aku masih terus berkembang, terutama di desain UI sederhana, editing ringan pakai Canva, dan beberapa soft skill seperti kerja sama tim, problem solving, dan tanggung jawab dalam menyelesaikan tugas.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 mb-5">
+    <h2 class="text-center fw-bold mb-4">Riwayat & Keahlian</h2>
+
+    <div class="accordion shadow" id="accordionProfile">
+
+        <!-- Riwayat Pendidikan -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#education">
+                    Riwayat Pendidikan
+                </button>
+            </h2>
+            <div id="education" class="accordion-collapse collapse show"
+                 data-bs-parent="#accordionProfile">
+                <div class="accordion-body">
+                    <ul>
+                        <li>SD 01 Tanjung Paku</li>
+                        <li>SMP Negeri 02 Kota Solok</li>
+                        <li>SMA Negeri 2 Sumatera Barat</li>
+                        <li>S1 Informatika – Universitas Andalas (2024–Sekarang)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pengalaman Organisasi -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#organization">
+                    Pengalaman Organisasi
+                </button>
+            </h2>
+            <div id="organization" class="accordion-collapse collapse"
+                 data-bs-parent="#accordionProfile">
+                <div class="accordion-body">
+                  <li> Badan Eksekutif Mahasiswa KM FTI </li> 
+                   <li>Himpunan Mahasiswa Informatika</li> 
+                   <li>Aliansi Mahasiswa Solok</li> 
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#achievement">
+                    Achievements
+                </button>
+            </h2>
+            <div id="achievement" class="accordion-collapse collapse"
+                 data-bs-parent="#accordionProfile">
+                <div class="accordion-body">
+                    <ul>
+                        <li>SoOon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#skills">
+                    Technical & Soft Skills
+                </button>
+            </h2>
+            <div id="skills" class="accordion-collapse collapse"
+                 data-bs-parent="#accordionProfile">
+                <div class="accordion-body">
+                    <ul>
+                        <li>HTML, CSS, Bootstrap</li>
+                        <li>UI/UX Basic</li>
+                        <li>Canva Editing</li>
+                        <li>Public Speaking & Teamwork</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobi -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#hobby">
+                    Hobi
+                </button>
+            </h2>
+            <div id="hobby" class="accordion-collapse collapse"
+                 data-bs-parent="#accordionProfile">
+                <div class="accordion-body">
+                    Traveling, fotografi, mendengarkan musik, dan editing konten kreatif.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER INFO -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>
+                    Website Portofolio.
+                </p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="border-secondary">
+
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">
+                Instagram
+            </a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

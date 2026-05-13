@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 7 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .mvc-card {
+            border: 1px solid #ffe0ec;
+            border-radius: 10px;
+            padding: 18px 20px;
+            background: #fff9fb;
+            margin-bottom: 14px;
+        }
+
+        .mvc-card .mvc-label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #c0547a;
+            margin-bottom: 6px;
+        }
+
+        .mvc-card code {
+            background: #fce4ec;
+            color: #880e4f;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Pemrograman Web</div>
+        <h1>Laporan Praktikum 7<br>Pengenalan & Instalasi Framework Laravel</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2025/2026
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#alat"><span class="toc-num">3.</span> Alat & Bahan</a></li>
+                    <li><a href="#teori"><span class="toc-num">4.</span> Dasar Teori</a></li>
+                    <li><a href="#langkah"><span class="toc-num">5.</span> Langkah Pengerjaan</a></li>
+                    <li><a href="#hasil"><span class="toc-num">6.</span> Hasil & Pembahasan</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">7.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <!-- 1. PENDAHULUAN -->
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Laravel merupakan salah satu framework PHP yang paling banyak digunakan dalam
+                    dunia pengembangan aplikasi web saat ini. Framework ini dikembangkan oleh
+                    <strong>Taylor Otwell</strong> dan merupakan proyek open source yang dirancang untuk
+                    mempercepat proses development dengan menyediakan berbagai fitur siap pakai.
+                    Laravel menerapkan pola arsitektur <strong>MVC (Model-View-Controller)</strong> yang
+                    memungkinkan developer untuk memisahkan logika bisnis, tampilan, dan pengelolaan
+                    data secara terstruktur dan rapi.
+                </p>
+                <p>
+                    Dalam pengembangan website modern, penggunaan framework menjadi hal yang sangat
+                    penting karena mampu mempercepat proses pembuatan aplikasi sekaligus menjaga
+                    kualitas dan keamanan kode. Laravel hadir dengan berbagai fitur bawaan yang lengkap
+                    seperti Eloquent ORM, Blade Templating Engine, Artisan Console, serta sistem routing
+                    dan middleware yang fleksibel.
+                </p>
+                <p>
+                    Pada praktikum ini, mahasiswa akan mempelajari langkah-langkah awal penggunaan
+                    Laravel — mulai dari instalasi tools pendukung, pembuatan project baru, memahami
+                    struktur direktori, menjalankan server development, hingga menampilkan halaman
+                    sederhana sebagai output pertama. Praktikum ini menjadi fondasi penting sebelum
+                    melanjutkan ke materi Laravel yang lebih lanjut.
+                </p>
+            </div>
+
+            <!-- 2. TUJUAN -->
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <p>Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:</p>
+                <ul>
+                    <li>Melakukan instalasi Laravel beserta seluruh tools pendukungnya secara mandiri</li>
+                    <li>Membuat project Laravel baru menggunakan Composer maupun Laravel Installer</li>
+                    <li>Memahami dan menjelaskan struktur direktori project Laravel</li>
+                    <li>Menerapkan konsep arsitektur MVC (Model-View-Controller) pada Laravel</li>
+                    <li>Menjalankan project Laravel menggunakan perintah <code>php artisan serve</code></li>
+                </ul>
+            </div>
+
+            <!-- 3. ALAT & BAHAN -->
+            <div class="content-card" id="alat">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Alat & Bahan
+                </div>
+                <p>Berikut tools dan perangkat lunak yang digunakan dalam praktikum ini:</p>
+                <div class="d-flex flex-wrap gap-1 mt-3">
+                </div>
+                <ul class="mt-3">
+                    <li><strong>Laragon / XAMPP</strong> – sebagai web server lokal dan environment PHP</li>
+                    <li><strong>Visual Studio Code</strong> – code editor utama selama development</li>
+                    <li><strong>Composer</strong> – package manager untuk PHP, digunakan untuk instalasi Laravel</li>
+                    <li><strong>Git</strong> – untuk version control dan manajemen repository</li>
+                    <li><strong>Node.js & NPM</strong> – untuk mengelola aset dan dependency frontend Laravel</li>
+                    <li><strong>GitHub</strong> – platform hosting repository project</li>
+                </ul>
+            </div>
+
+            <!-- 4. DASAR TEORI -->
+            <div class="content-card" id="teori">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Dasar Teori
+                </div>
+
+                <div class="sub-heading">4.1 Apa itu Laravel?</div>
+                <p>
+                    Laravel adalah framework PHP berbasis open source yang menggunakan pola arsitektur
+                    MVC (Model-View-Controller). Dikembangkan oleh Taylor Otwell sejak 2011, Laravel
+                    kini menjadi salah satu framework PHP paling populer di dunia. Laravel
+                    menyederhanakan proses development dengan menyediakan berbagai tools dan library
+                    yang sudah terintegrasi sehingga developer tidak perlu membangun semuanya dari nol.
+                </p>
+
+                <div class="sub-heading mt-4">4.2 Konsep MVC pada Laravel</div>
+                <p>MVC membagi aplikasi menjadi tiga komponen utama:</p>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">Model</div>
+                    <p class="mb-1">Bertanggung jawab atas pengelolaan data dan interaksi dengan database. Dibuat dengan perintah <code>php artisan make:model NamaModel</code>. Model menggunakan Eloquent ORM sehingga operasi database (insert, update, delete, query) bisa dilakukan dengan sintaks PHP yang intuitif.</p>
+                </div>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">View</div>
+                    <p class="mb-1">Bertugas menampilkan data kepada pengguna dalam bentuk antarmuka (UI). Laravel menggunakan <strong>Blade Templating Engine</strong> yang memungkinkan penulisan kode PHP di dalam HTML menggunakan direktif seperti <code>@if</code>, <code>@foreach</code>, dan <code>@extends</code>.</p>
+                </div>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">Controller</div>
+                    <p class="mb-1">Penghubung antara Model dan View. Controller menerima request, memproses data, lalu mengembalikan respons. Dibuat dengan perintah <code>php artisan make:controller NamaController</code>.</p>
+                </div>
+
+                <div class="sub-heading mt-4">4.3 Fitur Unggulan Laravel</div>
+                <div class="row g-2 mt-1">
+                    <div class="col-md-6">
+                        <ul>
+                            <li><strong>Eloquent ORM</strong> – Interaksi database yang ekspresif</li>
+                            <li><strong>Blade Templating</strong> – Engine template yang bersih</li>
+                            <li><strong>Artisan Console</strong> – CLI untuk otomatisasi tugas</li>
+                            <li><strong>Routing Fleksibel</strong> – Definisi URL yang mudah</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li><strong>Middleware</strong> – Filter request masuk/keluar</li>
+                            <li><strong>Keamanan Bawaan</strong> – Proteksi CSRF, XSS, SQL Injection</li>
+                            <li><strong>Authentication</strong> – Login & hak akses pengguna</li>
+                            <li><strong>Migration</strong> – Manajemen struktur database</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. LANGKAH PENGERJAAN -->
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">5</span> Langkah-Langkah Pengerjaan
+                </div>
+
+                <!-- STEP 1 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Mengecek Kebutuhan Sistem Laravel
+                    </div>
+                    <p>
+                        Sebelum menginstall Laravel, pastikan semua persyaratan sistem terpenuhi.
+                        Laravel 12 membutuhkan PHP versi 8.2 ke atas beserta sejumlah ekstensi PHP
+                        yang harus aktif: OpenSSL, PDO, Mbstring, Tokenizer, XML, Ctype, JSON, dan BCmath.
+                        Selain itu dibutuhkan Composer, Git, Node.js, dan NPM.
+                    </p>
+                    <p>Cek versi masing-masing tool melalui terminal:</p>
+                    <div class="code-block">
+<span class="cmd">php --version</span>       <span class="comment"># cek versi PHP</span>
+<span class="cmd">composer --version</span>  <span class="comment"># cek versi Composer</span>
+<span class="cmd">git --version</span>       <span class="comment"># cek versi Git</span>
+<span class="cmd">node --version</span>      <span class="comment"># cek versi Node.js</span>
+<span class="cmd">npm --version</span>       <span class="comment"># cek versi NPM</span>
+                    </div>
+
+                    <figure class="screenshot">
+                        <img src="./images/img1.jpg" alt="Gambar 1. Pengecekan versi PHP menggunakan terminal">
+                        <figcaption>Gambar 1. Pengecekan versi PHP menggunakan terminal</figcaption>
+                    </figure>
+
+                    <figure class="screenshot">
+                        <img src="./images/img2.jpg" alt="Gambar 2. Pengecekan versi Composer">
+                        <figcaption>Gambar 2. Pengecekan versi Composer</figcaption>
+                    </figure>
+
+                    <figure class="screenshot">
+                        <img src="./images/img3.jpg" alt="Gambar 3. Pengecekan versi Git">
+                        <figcaption>Gambar 3. Pengecekan versi Git</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Membuat Project Laravel
+                    </div>
+                    <p>
+                        Ada dua cara membuat project Laravel: menggunakan <strong>Laravel Installer</strong>
+                        atau langsung via <strong>Composer</strong>. Pada praktikum ini digunakan Composer
+                        karena lebih umum dan tidak memerlukan instalasi tambahan.
+                    </p>
+                    <p>Buka terminal, arahkan ke direktori kerja, lalu jalankan:</p>
+                    <div class="code-block">
+<span class="cmd">composer create-project laravel/laravel nama-project --prefer-dist</span>
+                    </div>
+                    <p>Tunggu hingga proses instalasi selesai. Composer akan mengunduh semua dependency yang dibutuhkan secara otomatis.</p>
+
+                    <figure class="screenshot">
+                        <img src="./images/img4.jpg" alt="Gambar 4. Proses pembuatan project Laravel menggunakan Composer">
+                        <figcaption>Gambar 4. Proses pembuatan project Laravel menggunakan Composer</figcaption>
+                    </figure>
+
+                    <figure class="screenshot">
+                        <img src="./images/img5.jpg" alt="Gambar 5. Tampilan terminal setelah project Laravel berhasil dibuat">
+                        <figcaption>Gambar 5. Tampilan terminal setelah project Laravel berhasil dibuat</figcaption>
+                    </figure>
+
+                    <figure class="screenshot">
+                        <img src="./images/img6.jpg" alt="Gambar 6. Struktur direktori project Laravel yang terbentuk">
+                        <figcaption>Gambar 6. Struktur direktori project Laravel yang terbentuk</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Masuk ke Folder Project
+                    </div>
+                    <p>Setelah project berhasil dibuat, masuk ke direktori project dan install dependency frontend:</p>
+                    <div class="code-block">
+<span class="cmd">cd nama-project</span>
+<span class="cmd">npm install && npm run build</span>
+<span class="cmd">composer run dev</span>
+                    </div>
+
+                    <figure class="screenshot">
+                        <img src="./images/img7.jpg" alt="Gambar 7. Perintah untuk masuk ke dalam folder project Laravel">
+                        <figcaption>Gambar 7. Perintah untuk masuk ke dalam folder project Laravel</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">4</span>
+                        Menjalankan Project Laravel
+                    </div>
+                    <p>
+                        Untuk menjalankan project di browser, gunakan perintah Artisan yang akan
+                        membuat server development lokal:
+                    </p>
+                    <div class="code-block">
+<span class="cmd">php artisan serve</span>
+                    </div>
+                    <p>
+                        Server akan berjalan di <strong>http://127.0.0.1:8000</strong> secara default.
+                        Buka browser dan akses alamat tersebut untuk memastikan project Laravel berjalan dengan baik.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/img8.jpg" alt="Gambar 8. Perintah php artisan serve untuk menjalankan server Laravel">
+                        <figcaption>Gambar 8. Perintah php artisan serve untuk menjalankan server Laravel</figcaption>
+                    </figure>
+
+                    <figure class="screenshot">
+                        <img src="./images/img9.jpg" alt="Gambar 9. Tampilan halaman default Laravel yang berhasil diakses di browser">
+                        <figcaption>Gambar 9. Tampilan halaman default Laravel yang berhasil diakses di browser</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">5</span>
+                        Menampilkan Halaman Hello World
+                    </div>
+                    <p>
+                        Sebagai percobaan pertama routing Laravel, buka file <code>routes/web.php</code>
+                        dan tambahkan route berikut:
+                    </p>
+                    <div class="code-block">
+Route::get(<span style="color:#f38ba8;">'/hello'</span>, function() {
+    return <span style="color:#a6e3a1;">'Hello World'</span>;
+});
+                    </div>
+                    <p>
+                        Simpan file lalu akses <strong>http://127.0.0.1:8000/hello</strong> di browser.
+                        Jika berhasil, browser akan menampilkan tulisan "Hello World", yang membuktikan
+                        sistem routing Laravel berjalan dengan benar.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/img10.jpg" alt="Gambar 10. Tampilan output Hello World setelah route berhasil dibuat">
+                        <figcaption>Gambar 10. Tampilan output Hello World setelah route berhasil dibuat</figcaption>
+                    </figure>
+
+                    <figure class="screenshot">
+                        <img src="./images/img11.jpg" alt="Gambar 11. Hasil akhir halaman Hello World pada browser">
+                        <figcaption>Gambar 11. Hasil akhir halaman Hello World pada browser</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <!-- 6. HASIL & PEMBAHASAN -->
+            <div class="content-card" id="hasil">
+                <div class="section-heading">
+                    <span class="section-number">6</span> Hasil & Pembahasan
+                </div>
+                <p>
+                    Berdasarkan praktikum yang telah dilakukan, seluruh tahapan instalasi dan
+                    konfigurasi Laravel berhasil diselesaikan dengan baik. Beberapa poin penting
+                    yang bisa disimpulkan:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Instalasi tools:</strong> PHP 8.2, Composer, Git, Node.js, dan NPM
+                        semuanya berhasil diinstall dan diverifikasi melalui perintah versi di terminal.
+                    </li>
+                    <li class="mt-2">
+                        <strong>Pembuatan project:</strong> Project Laravel terbuat dengan lancar menggunakan
+                        Composer. Struktur direktori Laravel otomatis terbentuk dengan folder-folder seperti
+                        <code>app/</code> (berisi Model, Controller), <code>resources/views/</code> (View/Blade),
+                        <code>routes/</code> (konfigurasi routing), dan <code>public/</code> (root server web).
+                    </li>
+                    <li class="mt-2">
+                        <strong>Server development:</strong> Perintah <code>php artisan serve</code> berhasil
+                        menjalankan server lokal. Halaman default Laravel tampil di browser, menandakan
+                        instalasi berjalan dengan benar.
+                    </li>
+                    <li class="mt-2">
+                        <strong>Routing sederhana:</strong> Route GET berhasil dibuat di <code>web.php</code>.
+                        Halaman "Hello World" tampil di browser, membuktikan sistem routing Laravel
+                        bekerja sesuai harapan.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 7. KESIMPULAN -->
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">7</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p>
+                        Pada praktikum ini, mahasiswa telah berhasil mempelajari dan menerapkan
+                        langkah-langkah dasar penggunaan framework Laravel — mulai dari pengecekan
+                        persyaratan sistem, instalasi tools pendukung, pembuatan project baru,
+                        hingga menjalankan halaman pertama menggunakan routing Laravel.
+                    </p>
+                    <p class="mb-0">
+                        Laravel terbukti menjadi framework PHP yang <em>powerful</em> sekaligus mudah
+                        digunakan berkat sistem routing yang sederhana, Artisan Console yang
+                        memudahkan berbagai tugas development, serta struktur direktori yang
+                        terorganisir mengikuti pola arsitektur MVC. Pemahaman dasar ini menjadi
+                        bekal penting untuk mempelajari fitur-fitur Laravel yang lebih lanjut
+                        pada praktikum berikutnya.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">← Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
