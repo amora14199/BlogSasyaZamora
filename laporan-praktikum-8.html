@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 8 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #fffafc;
+        }
+        .report-hero {
+            padding: 110px 0 55px;
+            background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+            border-bottom: 1px solid rgba(244, 166, 193, 0.45);
+        }
+        .report-label {
+            display: inline-block;
+            background-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 8px 16px;
+            margin-bottom: 14px;
+        }
+        .report-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            padding: 34px;
+            margin-bottom: 24px;
+            border-top: 3px solid #f4a6c1;
+        }
+        .report-card h2 {
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #222;
+        }
+        .report-card h3 {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #c0547a;
+            margin-bottom: 12px;
+        }
+        .report-card p,
+        .report-card li {
+            line-height: 1.75;
+        }
+        .report-img {
+            width: 100%;
+            max-height: 540px;
+            object-fit: contain;
+            background: #f8f8f8;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 12px 0 16px;
+        }
+        .step-box {
+            border-left: 4px solid #f4a6c1;
+            background: #fffafd;
+            border-radius: 12px;
+            padding: 20px 20px 10px;
+            margin-bottom: 18px;
+        }
+        .toc-card a {
+            color: #c0547a;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .toc-card a:hover {
+            color: #e68fb0;
+            text-decoration: underline;
+        }
+        .btn-pink {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+        }
+        .btn-pink:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+        @media (max-width: 576px) {
+            .report-card {
+                padding: 24px 18px;
+            }
+            .report-hero {
+                padding-top: 95px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="report-hero text-center">
+    <div class="container">
+        <span class="report-label">Report</span>
+        <h1 class="fw-bold mb-3">Laporan Praktikum 8</h1>
+        <p class="lead mb-4">Pemrograman Web - Laravel, Database, Migration, Seeder, Model, Controller, Routing, dan View</p>
+        <a href="portfolio.html" class="btn btn-pink">&#8592; Kembali ke Portfolio</a>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+            <div class="report-card toc-card">
+                <h2>Daftar Isi</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ol class="mb-md-0">
+                            <li><a href="#pendahuluan">Pendahuluan</a></li>
+                            <li><a href="#tujuan">Tujuan</a></li>
+                            <li><a href="#tools">Alat atau Tools yang Dipakai</a></li>
+                            <li><a href="#dasar-teori">Dasar Teori</a></li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <ol start="5" class="mb-0">
+                            <li><a href="#langkah">Langkah Pengerjaan</a></li>
+                            <li><a href="#hasil">Hasil dan Pembahasan</a></li>
+                            <li><a href="#kesimpulan">Kesimpulan</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <section id="pendahuluan" class="report-card">
+                <h2>1. Pendahuluan</h2>
+                <p>Perkembangan teknologi website saat ini berkembang sangat pesat, terutama dalam pembuatan aplikasi web yang dinamis dan terstruktur. Salah satu framework PHP yang banyak digunakan dalam pengembangan website modern adalah Laravel. Laravel merupakan framework berbasis MVC (Model View Controller) yang menyediakan berbagai fitur untuk mempermudah developer dalam membangun aplikasi web secara lebih cepat, rapi, dan efisien.</p>
+                <p>Pada praktikum ini dilakukan pembelajaran mengenai dasar penggunaan Laravel meliputi migration, seeding, routing, model, controller, dan view. Praktikum dilakukan dengan membuat aplikasi sederhana untuk menampilkan data produk dari database ke halaman web menggunakan Laravel. Dengan praktikum ini mahasiswa dapat memahami alur kerja Laravel mulai dari konfigurasi database hingga menampilkan data pada browser.</p>
+            </section>
+
+            <section id="tujuan" class="report-card">
+                <h2>2. Tujuan</h2>
+                <p>Tujuan dari praktikum ini adalah:</p>
+                <ol>
+                    <li>Memahami konsep dasar framework Laravel.</li>
+                    <li>Memahami penggunaan migration pada Laravel.</li>
+                    <li>Memahami penggunaan seeder untuk mengisi data awal database.</li>
+                    <li>Memahami penggunaan routing pada Laravel.</li>
+                    <li>Memahami fungsi model, controller, dan view pada konsep MVC.</li>
+                    <li>Membuat aplikasi sederhana berbasis Laravel untuk menampilkan data produk dari database.</li>
+                </ol>
+            </section>
+
+            <section id="tools" class="report-card">
+                <h2>3. Alat atau Tools yang Dipakai</h2>
+                <ul>
+                    <li>Computer / laptop</li>
+                    <li>XAMPP</li>
+                    <li>Visual Studio Code</li>
+                    <li>Composer, GIT, Node JS, NPM</li>
+                </ul>
+            </section>
+
+            <section id="dasar-teori" class="report-card">
+                <h2>4. Dasar Teori</h2>
+                <p>Laravel merupakan framework PHP yang menggunakan konsep MVC (Model View Controller). Konsep MVC digunakan untuk memisahkan logika program, tampilan, dan pengelolaan data sehingga aplikasi menjadi lebih terstruktur dan mudah dikembangkan.</p>
+                <p>Pada Laravel terdapat beberapa komponen penting yaitu:</p>
+                <ul>
+                    <li><strong>Migration</strong>, digunakan untuk membuat dan mengelola struktur tabel database menggunakan kode program.</li>
+                    <li><strong>Seeder</strong>, digunakan untuk mengisi data awal atau data dummy ke dalam database.</li>
+                    <li><strong>Routing</strong>, digunakan untuk menghubungkan URL dengan halaman atau controller tertentu.</li>
+                    <li><strong>Model</strong>, digunakan untuk berinteraksi dengan database menggunakan Eloquent ORM Laravel.</li>
+                    <li><strong>Controller</strong>, berfungsi untuk mengatur logika aplikasi dan menghubungkan model dengan view.</li>
+                    <li><strong>View</strong>, digunakan untuk menampilkan tampilan antarmuka kepada pengguna menggunakan Blade Template Laravel.</li>
+                </ul>
+            </section>
+
+            <section id="langkah" class="report-card">
+                <h2>5. Langkah Pengerjaan</h2>
+
+                <div class="step-box">
+                    <h3>a. Membuat Database</h3>
+                    <img src="images/laporan-praktikum-8/laporan8-01-database.png" alt="Membuat database praktikum_laravel di phpMyAdmin" class="report-img">
+                    <p>Pada tahap awal dilakukan pembuatan database menggunakan phpMyAdmin dengan nama <strong>praktikum_laravel</strong>. Database ini digunakan sebagai tempat penyimpanan data aplikasi Laravel.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>b. Konfigurasi Database Laravel</h3>
+                    <p>Setelah database dibuat, langkah berikutnya adalah melakukan konfigurasi koneksi database pada file <strong>.env</strong>.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-02-konfigurasi-database.png" alt="Konfigurasi database Laravel pada file .env" class="report-img">
+                    <p>Konfigurasi tersebut digunakan agar Laravel dapat terhubung dengan database MySQL yang telah dibuat sebelumnya.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>c. Menjalankan Laravel</h3>
+                    <p>Laravel dijalankan menggunakan terminal Visual Studio Code dengan perintah artisan.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-03-artisan-serve.png" alt="Menjalankan Laravel dengan perintah php artisan serve" class="report-img">
+                    <p>Perintah <strong>php artisan serve</strong> digunakan untuk menjalankan server lokal Laravel sehingga aplikasi dapat diakses melalui browser.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>d. Membuat Model, Migration, Seeder, dan Controller</h3>
+                    <p>Pada tahap ini dibuat model <strong>Product</strong> beserta migration, seeder, dan controller menggunakan satu perintah artisan.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-04-membuat-model.png" alt="Membuat model Product menggunakan artisan" class="report-img">
+                    <p>Perintah tersebut digunakan untuk membuat model Product, migration products, seeder ProductSeeder, dan controller ProductController secara otomatis sehingga proses pengembangan menjadi lebih cepat dan efisien.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>e. Membuat Migration Products</h3>
+                    <p>Migration digunakan untuk membuat struktur tabel <strong>products</strong> pada database.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-05-migration-products.png" alt="Kode migration tabel products" class="report-img">
+                    <p>Struktur tabel products terdiri dari kolom <strong>id</strong>, <strong>name</strong>, <strong>price</strong>, <strong>description</strong>, dan <strong>timestamps</strong>. Kolom timestamps digunakan untuk menyimpan waktu pembuatan dan perubahan data.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>f. Menjalankan Migration</h3>
+                    <p>Migration dijalankan untuk membuat tabel products pada database.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-06-menjalankan-migration.png" alt="Menjalankan migration Laravel" class="report-img">
+                    <p>Perintah <strong>migrate</strong> digunakan untuk menjalankan seluruh file migration sehingga tabel otomatis dibuat pada database.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>g. Membuat Seeder</h3>
+                    <p>Seeder dibuat untuk mengisi data awal pada tabel products.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-07-product-seeder.png" alt="Kode ProductSeeder untuk mengisi data produk" class="report-img">
+                    <p>Seeder membantu developer dalam memasukkan data dummy secara otomatis tanpa harus mengetik data satu per satu pada database.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>h. Menghubungkan Seeder</h3>
+                    <p>Seeder dihubungkan melalui file <strong>DatabaseSeeder.php</strong>.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-08-database-seeder.png" alt="Menghubungkan ProductSeeder pada DatabaseSeeder" class="report-img">
+                    <p>Kode tersebut digunakan untuk memanggil ProductSeeder agar Laravel dapat menjalankan seeder tersebut.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>i. Menjalankan Seeder</h3>
+                    <p>Seeder dijalankan menggunakan perintah artisan berikut.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-09-menjalankan-seeder.png" alt="Menjalankan seeder menggunakan php artisan migrate fresh seed" class="report-img">
+                    <p>Perintah tersebut digunakan untuk menghapus seluruh tabel database, menjalankan ulang migration, dan mengisi data awal menggunakan seeder.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>j. Membuat Model Product</h3>
+                    <p>Model Product digunakan untuk berinteraksi dengan tabel products pada database.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-10-model-product.png" alt="Kode model Product Laravel" class="report-img">
+                    <p>Model Laravel menggunakan Eloquent ORM sehingga proses manipulasi data menjadi lebih mudah dan sederhana.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>k. Membuat Controller</h3>
+                    <p>Controller digunakan untuk mengatur logika aplikasi dan menghubungkan model dengan view.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-11-product-controller.png" alt="Kode ProductController Laravel" class="report-img">
+                    <p>Pada praktikum ini controller digunakan untuk mengambil data products dari database kemudian mengirimkannya ke halaman view.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>l. Membuat Routing</h3>
+                    <p>Routing digunakan untuk menghubungkan URL dengan controller Laravel.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-12-routing-products.png" alt="Route products pada Laravel" class="report-img">
+                    <p>Routing tersebut digunakan agar halaman <strong>/products</strong> dapat menampilkan data dari ProductController.</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>m. Membuat View Products</h3>
+                    <p>View digunakan untuk menampilkan data produk ke halaman web menggunakan Blade Template Laravel.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-13-view-products.png" alt="Kode view products.blade.php" class="report-img">
+                    <p>View <strong>products.blade.php</strong> digunakan untuk menampilkan daftar produk menggunakan perulangan foreach.</p>
+                </div>
+
+                <div class="step-box mb-0">
+                    <h3>n. Hasil Akhir Program</h3>
+                    <p>Hasil akhir program berhasil menampilkan data produk dari database ke browser menggunakan Laravel.</p>
+                    <img src="images/laporan-praktikum-8/laporan8-14-hasil-akhir.png" alt="Hasil akhir halaman daftar produk" class="report-img">
+                    <p>Data berhasil diambil dari database menggunakan model Product, kemudian dikirim ke controller dan ditampilkan pada view menggunakan Blade Template.</p>
+                </div>
+            </section>
+
+            <section id="hasil" class="report-card">
+                <h2>6. Hasil dan Pembahasan</h2>
+                <p>Pada praktikum ini berhasil dibuat aplikasi sederhana menggunakan framework Laravel dengan konsep MVC (Model View Controller). Praktikum dimulai dari konfigurasi database, pembuatan migration untuk membuat tabel products, pembuatan seeder untuk mengisi data awal, pembuatan model sebagai penghubung database, controller sebagai pengatur logika aplikasi, routing sebagai penghubung URL, serta view untuk menampilkan data produk pada halaman web.</p>
+                <p>Hasil akhir menunjukkan bahwa aplikasi Laravel berhasil menampilkan data produk dari database ke browser dengan baik. Selain itu, praktikum ini juga memberikan pemahaman mengenai alur kerja Laravel dalam membangun aplikasi web modern secara lebih terstruktur dan efisien.</p>
+            </section>
+
+            <section id="kesimpulan" class="report-card">
+                <h2>7. Kesimpulan</h2>
+                <p>Berdasarkan praktikum yang telah dilakukan dapat disimpulkan bahwa framework Laravel mempermudah proses pengembangan aplikasi web modern karena memiliki struktur yang terorganisir menggunakan konsep MVC. Fitur migration, seeding, routing, model, controller, dan view membantu developer dalam membangun aplikasi secara lebih terstruktur, efisien, dan mudah dikembangkan.</p>
+                <p>Pada praktikum ini berhasil dibuat aplikasi sederhana untuk menampilkan data produk dari database ke halaman web menggunakan Laravel sehingga mahasiswa dapat memahami dasar penggunaan Laravel dalam pengembangan aplikasi web.</p>
+                <div class="text-center mt-4">
+                    <a href="portfolio.html" class="btn btn-pink">Kembali ke Portfolio</a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER INFO -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="border-secondary">
+
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">
+                Instagram
+            </a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
