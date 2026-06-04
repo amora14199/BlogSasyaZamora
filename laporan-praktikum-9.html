@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 9 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+            white-space: pre-wrap;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .mvc-card {
+            border: 1px solid #ffe0ec;
+            border-radius: 10px;
+            padding: 18px 20px;
+            background: #fff9fb;
+            margin-bottom: 14px;
+        }
+
+        .mvc-card .mvc-label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #c0547a;
+            margin-bottom: 6px;
+        }
+
+        .mvc-card code {
+            background: #fce4ec;
+            color: #880e4f;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Pemrograman Web</div>
+        <h1>Laporan Praktikum 9<br>Eloquent Relationship pada Laravel</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2025/2026
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#alat"><span class="toc-num">3.</span> Alat & Bahan</a></li>
+                    <li><a href="#teori"><span class="toc-num">4.</span> Dasar Teori</a></li>
+                    <li><a href="#langkah"><span class="toc-num">5.</span> Langkah Pengerjaan</a></li>
+                    <li><a href="#latihan"><span class="toc-num">6.</span> Latihan & Tugas</a></li>
+                    <li><a href="#hasil"><span class="toc-num">7.</span> Hasil & Pembahasan</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">8.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <!-- 1. PENDAHULUAN -->
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Laravel merupakan framework PHP berbasis MVC (Model View Controller) yang banyak digunakan dalam
+                    pengembangan aplikasi web modern. Laravel menyediakan berbagai fitur yang mempermudah pengelolaan
+                    database, salah satunya adalah Eloquent ORM. Eloquent ORM memungkinkan pengembang untuk berinteraksi
+                    dengan database menggunakan model tanpa harus menulis query SQL secara langsung.
+                </p>
+                <p>
+                    Pada praktikum ini dipelajari penerapan Eloquent Relationship dalam Laravel untuk menghubungkan
+                    beberapa tabel yang saling berelasi. Relationship yang digunakan meliputi One-to-Many dan
+                    Many-to-Many. Implementasi dilakukan melalui pembuatan migration, model, seeder, route, serta view
+                    untuk menampilkan data yang memiliki hubungan antar tabel.
+                </p>
+                <p>
+                    Melalui praktikum ini mahasiswa dapat memahami bagaimana Laravel mengelola hubungan antar data
+                    sehingga proses pengembangan aplikasi menjadi lebih terstruktur dan efisien.
+                </p>
+            </div>
+
+            <!-- 2. TUJUAN -->
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <ol>
+                    <li>Memahami konsep relationship dalam Laravel.</li>
+                    <li>Mengimplementasikan One-to-Many dan Many-to-Many relationship.</li>
+                    <li>Membuat migration dengan foreign key.</li>
+                    <li>Menggunakan Eloquent relationship untuk query data.</li>
+                    <li>Menampilkan data dengan relationship di view.</li>
+                </ol>
+            </div>
+
+            <!-- 3. ALAT DAN BAHAN -->
+            <div class="content-card" id="alat">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Alat dan Bahan
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mvc-card">
+                            <div class="mvc-label">Hardware</div>
+                            <ul class="mb-0">
+                                <li>Laptop/PC.</li>
+                                <li>RAM minimal 4 GB.</li>
+                                <li>Penyimpanan minimal 10 GB.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mvc-card">
+                            <div class="mvc-label">Software</div>
+                            <ul class="mb-0">
+                                <li>Windows 10/11.</li>
+                                <li>Visual Studio Code.</li>
+                                <li>PHP 8.x.</li>
+                                <li>Composer.</li>
+                                <li>Laravel 12.</li>
+                                <li>XAMPP.</li>
+                                <li>MySQL.</li>
+                                <li>Web Browser (Google Chrome).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. DASAR TEORI -->
+            <div class="content-card" id="teori">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Dasar Teori
+                </div>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">Laravel</div>
+                    <p class="mb-0">
+                        Laravel adalah framework PHP open-source yang menerapkan konsep MVC (Model View Controller)
+                        untuk mempermudah proses pengembangan aplikasi web. Laravel menyediakan fitur migration,
+                        seeder, middleware, routing, dan Eloquent ORM.
+                    </p>
+                </div>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">Eloquent ORM</div>
+                    <p class="mb-0">
+                        Eloquent ORM merupakan fitur Laravel yang digunakan untuk berinteraksi dengan database
+                        menggunakan model. Dengan Eloquent, proses CRUD dapat dilakukan dengan sintaks yang lebih
+                        sederhana dibandingkan query SQL biasa.
+                    </p>
+                </div>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">One-to-Many Relationship</div>
+                    <p>
+                        Relationship One-to-Many adalah hubungan dimana satu data pada tabel utama dapat memiliki
+                        banyak data pada tabel lain. Contohnya, satu jurusan memiliki banyak mahasiswa, sedangkan
+                        satu mahasiswa hanya memiliki satu jurusan.
+                    </p>
+                    <div class="code-block">majors
+|
+|----&lt; students</div>
+                </div>
+
+                <div class="mvc-card">
+                    <div class="mvc-label">Many-to-Many Relationship</div>
+                    <p>
+                        Relationship Many-to-Many adalah hubungan dimana satu data dapat berhubungan dengan banyak
+                        data lainnya dan sebaliknya. Contohnya, mahasiswa dapat mengambil banyak mata kuliah dan
+                        mata kuliah dapat diambil banyak mahasiswa. Hubungan ini menggunakan tabel penghubung
+                        atau pivot table.
+                    </p>
+                    <div class="code-block">students
+|
+student_subject
+|
+subjects</div>
+                </div>
+
+                <p>
+                    <span class="tag-pill">Migration</span>
+                    Migration digunakan untuk membuat dan mengelola struktur tabel database secara terprogram melalui Laravel.
+                </p>
+                <p class="mb-0">
+                    <span class="tag-pill">Seeder</span>
+                    Seeder digunakan untuk mengisi data awal ke dalam database sehingga proses pengujian aplikasi menjadi lebih mudah.
+                </p>
+            </div>
+
+            <!-- 5. LANGKAH PENGERJAAN -->
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">5</span> Langkah Pengerjaan
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Buat Migration
+                    </div>
+                    <p>
+                        Pada tahap awal dibuat migration untuk membangun struktur database sistem akademik. Tabel
+                        yang dibuat meliputi <code>majors</code>, <code>students</code>, <code>subjects</code>, dan
+                        <code>student_subject</code> sebagai tabel pivot.
+                    </p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-1.png" alt="Gambar 1. Pembuatan migration tabel majors">
+                        <figcaption>Gambar 1. Pembuatan migration tabel majors</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-2.png" alt="Gambar 2. Pembuatan migration tabel students">
+                        <figcaption>Gambar 2. Pembuatan migration tabel students</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-3.png" alt="Gambar 3. Pembuatan migration tabel subjects">
+                        <figcaption>Gambar 3. Pembuatan migration tabel subjects</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-4.png" alt="Gambar 4. Pembuatan migration tabel student_subject">
+                        <figcaption>Gambar 4. Pembuatan migration tabel student_subject</figcaption>
+                    </figure>
+
+                    <p>
+                        Tabel <code>majors</code> digunakan untuk menyimpan data jurusan, tabel <code>students</code>
+                        digunakan untuk menyimpan data mahasiswa, tabel <code>subjects</code> digunakan untuk menyimpan
+                        data mata kuliah, dan tabel <code>student_subject</code> digunakan untuk menghubungkan mahasiswa
+                        dengan mata kuliah.
+                    </p>
+                    <p class="sub-heading">Jalankan migrate</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-5.png" alt="Gambar 5. Menjalankan perintah php artisan migrate">
+                        <figcaption>Gambar 5. Menjalankan perintah php artisan migrate</figcaption>
+                    </figure>
+
+                    <p>
+                        Perintah migrate digunakan untuk membuat seluruh tabel yang telah didefinisikan pada file migration
+                        ke dalam database MySQL.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Membuat Model dengan Relationship
+                    </div>
+                    <p>
+                        Model dibuat untuk merepresentasikan tabel database dan mendefinisikan relationship antar data.
+                    </p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-6.png" alt="Gambar 6. Model Major dengan relationship hasMany">
+                        <figcaption>Gambar 6. Model Major dengan relationship hasMany</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-7.png" alt="Gambar 7. Model Student dengan relationship belongsTo dan belongsToMany">
+                        <figcaption>Gambar 7. Model Student dengan relationship belongsTo dan belongsToMany</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-8.png" alt="Gambar 8. Model Subject dengan relationship belongsToMany">
+                        <figcaption>Gambar 8. Model Subject dengan relationship belongsToMany</figcaption>
+                    </figure>
+
+                    <p>
+                        Pada tahap ini dibuat relationship antar model menggunakan Eloquent ORM. Model Major menggunakan
+                        <code>hasMany()</code>, Student menggunakan <code>belongsTo()</code> dan <code>belongsToMany()</code>,
+                        sedangkan Subject menggunakan <code>belongsToMany()</code>.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Seeder untuk Data Sample
+                    </div>
+                    <p>
+                        Seeder dibuat untuk menghasilkan data contoh secara otomatis sehingga proses pengujian relationship
+                        dapat dilakukan tanpa memasukkan data secara manual.
+                    </p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-9.png" alt="Gambar 9. Seeder untuk data Major">
+                        <figcaption>Gambar 9. Seeder untuk data Major</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-10.png" alt="Gambar 10. Seeder untuk data Subject">
+                        <figcaption>Gambar 10. Seeder untuk data Subject</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-11.png" alt="Gambar 11. Seeder untuk data Student">
+                        <figcaption>Gambar 11. Seeder untuk data Student</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-12.png" alt="Gambar 12. Update DatabaseSeeder">
+                        <figcaption>Gambar 12. Update DatabaseSeeder</figcaption>
+                    </figure>
+
+                    <p class="sub-heading">Jalankan seeder</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-13.png" alt="Gambar 13. Menjalankan perintah db:seed">
+                        <figcaption>Gambar 13. Menjalankan perintah db:seed</figcaption>
+                    </figure>
+
+                    <p>
+                        Perintah ini digunakan untuk mengisi seluruh tabel dengan data yang telah ditentukan pada seeder.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">4</span>
+                        Membuat Controller
+                    </div>
+                    <p class="sub-heading">StudentController</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-14.png" alt="Gambar 14. Pembuatan StudentController">
+                        <figcaption>Gambar 14. Pembuatan StudentController</figcaption>
+                    </figure>
+
+                    <p>
+                        Pada tahap ini dibuat controller <code>StudentController</code> yang berfungsi sebagai penghubung
+                        antara model dan view. Controller digunakan untuk mengelola proses pengambilan, penyimpanan,
+                        pengubahan, dan penghapusan data mahasiswa. Dengan menggunakan resource controller, setiap fungsi
+                        CRUD dapat ditangani secara lebih terstruktur.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">5</span>
+                        Membuat Routes
+                    </div>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-15.png" alt="Gambar 15. Pembuatan route resource dan route latihan">
+                        <figcaption>Gambar 15. Pembuatan route resource dan route latihan</figcaption>
+                    </figure>
+
+                    <p>
+                        Route digunakan untuk menghubungkan URL dengan controller atau view tertentu. Pada praktikum ini
+                        digunakan resource route untuk menghubungkan seluruh fungsi pada <code>StudentController</code>
+                        dengan URL aplikasi. Selain itu ditambahkan beberapa route latihan untuk menampilkan data relationship.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">6</span>
+                        Membuat Views
+                    </div>
+                    <p class="sub-heading">Layout utama</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-16.png" alt="Gambar 16. Layout utama aplikasi">
+                        <figcaption>Gambar 16. Layout utama aplikasi</figcaption>
+                    </figure>
+
+                    <p>
+                        Layout utama dibuat untuk menyimpan struktur dasar halaman web yang digunakan secara berulang pada
+                        seluruh halaman aplikasi. Layout ini biasanya berisi header, navigasi, footer, dan area konten utama
+                        menggunakan directive <code>@yield()</code>.
+                    </p>
+                    <p class="sub-heading">Index Students</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-17.png" alt="Gambar 17. View index students">
+                        <figcaption>Gambar 17. View index students</figcaption>
+                    </figure>
+
+                    <p>
+                        Halaman Index Student digunakan untuk menampilkan seluruh data mahasiswa yang tersimpan pada database.
+                        Data ditampilkan dalam bentuk tabel yang berisi informasi NIM, nama mahasiswa, jurusan, dan aksi yang
+                        dapat dilakukan.
+                    </p>
+                    <p class="sub-heading">Create Student</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-18.png" alt="Gambar 18. View create student">
+                        <figcaption>Gambar 18. View create student</figcaption>
+                    </figure>
+
+                    <p>
+                        Halaman Create Student digunakan untuk menambahkan data mahasiswa baru ke dalam database. Form yang
+                        disediakan meliputi NIM, nama mahasiswa, alamat, dan pilihan jurusan.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">7</span>
+                        Melihat Tabel pada Database
+                    </div>
+                    <p class="sub-heading">Table major</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-19.png" alt="Gambar 19. Tabel majors pada database">
+                        <figcaption>Gambar 19. Tabel majors pada database</figcaption>
+                    </figure>
+
+                    <p>
+                        Tabel majors berhasil dibuat menggunakan migration Laravel dan berfungsi untuk menyimpan data jurusan.
+                        Data yang tersimpan terdiri dari beberapa jurusan seperti Teknik Informatika, Sistem Informasi, Teknik
+                        Komputer, dan Manajemen Informatika.
+                    </p>
+                    <p class="sub-heading">Table student</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-20.png" alt="Gambar 20. Tabel students pada database">
+                        <figcaption>Gambar 20. Tabel students pada database</figcaption>
+                    </figure>
+
+                    <p>
+                        Tabel students berhasil menyimpan data mahasiswa yang terdiri dari NIM, nama, alamat, dan
+                        <code>major_id</code>. Kolom <code>major_id</code> digunakan sebagai foreign key yang menghubungkan
+                        mahasiswa dengan jurusan tertentu.
+                    </p>
+                    <p class="sub-heading">Table student_subject</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-21.png" alt="Gambar 21. Tabel student_subject sebagai tabel pivot">
+                        <figcaption>Gambar 21. Tabel student_subject sebagai tabel pivot</figcaption>
+                    </figure>
+
+                    <p>
+                        Tabel student_subject merupakan tabel pivot yang digunakan untuk menghubungkan mahasiswa dengan mata
+                        kuliah. Tabel ini berisi foreign key <code>student_id</code> dan <code>subject_id</code>.
+                    </p>
+                    <p class="sub-heading">Table subject</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-22.png" alt="Gambar 22. Tabel subjects pada database">
+                        <figcaption>Gambar 22. Tabel subjects pada database</figcaption>
+                    </figure>
+
+                    <p>
+                        Tabel subjects digunakan untuk menyimpan data mata kuliah yang tersedia dalam sistem. Setiap mata
+                        kuliah memiliki nama dan jumlah SKS yang digunakan untuk menghitung total beban studi mahasiswa.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. LATIHAN DAN TUGAS -->
+            <div class="content-card" id="latihan">
+                <div class="section-heading">
+                    <span class="section-number">6</span> Latihan dan Tugas
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Menampilkan Semua Mahasiswa Beserta Jurusan dan Mata Kuliahnya
+                    </div>
+                    <p class="sub-heading">Tambahkan Route</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-23.png" alt="Gambar 23. Route untuk menampilkan data mahasiswa beserta relasi">
+                        <figcaption>Gambar 23. Route untuk menampilkan data mahasiswa beserta relasi</figcaption>
+                    </figure>
+
+                    <p class="sub-heading">Buat Folder dan File View</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-24.png" alt="Gambar 24. View untuk menampilkan mahasiswa, jurusan, dan mata kuliah">
+                        <figcaption>Gambar 24. View untuk menampilkan mahasiswa, jurusan, dan mata kuliah</figcaption>
+                    </figure>
+
+                    <p>
+                        Pada latihan ini digunakan Eloquent Relationship untuk menampilkan seluruh data mahasiswa beserta
+                        data jurusan dan mata kuliah yang dimiliki. Data mahasiswa diambil menggunakan model Student dengan
+                        memanfaatkan relationship <code>major()</code> dan <code>subjects()</code>.
+                    </p>
+                    <p class="sub-heading">Jalankan Laravel</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-25.png" alt="Gambar 25. Menjalankan server Laravel">
+                        <figcaption>Gambar 25. Menjalankan server Laravel</figcaption>
+                    </figure>
+
+                    <p class="sub-heading">Hasil</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-26.png" alt="Gambar 26. Hasil tampilan semua mahasiswa beserta jurusan dan mata kuliah">
+                        <figcaption>Gambar 26. Hasil tampilan semua mahasiswa beserta jurusan dan mata kuliah</figcaption>
+                    </figure>
+
+                    <p>
+                        Berdasarkan hasil yang diperoleh, setiap mahasiswa berhasil ditampilkan bersama informasi jurusan dan
+                        daftar mata kuliah yang diambil. Penggunaan eager loading membuat proses pengambilan data menjadi lebih
+                        efisien karena Laravel hanya menjalankan beberapa query untuk mengambil data yang saling berelasi.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Menampilkan Jurusan dengan Jumlah Mahasiswa
+                    </div>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-27.png" alt="Gambar 27. Route untuk menampilkan jumlah mahasiswa per jurusan">
+                        <figcaption>Gambar 27. Route untuk menampilkan jumlah mahasiswa per jurusan</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-28.png" alt="Gambar 28. View jumlah mahasiswa pada setiap jurusan">
+                        <figcaption>Gambar 28. View jumlah mahasiswa pada setiap jurusan</figcaption>
+                    </figure>
+
+                    <p>
+                        Pada latihan ini digunakan relationship antara tabel majors dan students untuk menghitung jumlah mahasiswa
+                        pada setiap jurusan. Laravel menyediakan fungsi <code>withCount()</code> yang dapat digunakan untuk menghitung
+                        jumlah data relasi secara otomatis.
+                    </p>
+                    <p class="sub-heading">Hasil</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-29.png" alt="Gambar 29. Hasil jumlah mahasiswa pada setiap jurusan">
+                        <figcaption>Gambar 29. Hasil jumlah mahasiswa pada setiap jurusan</figcaption>
+                    </figure>
+
+                    <p>
+                        Hasil yang diperoleh menunjukkan jumlah mahasiswa pada masing-masing jurusan. Dari data tersebut dapat
+                        diketahui jurusan mana yang memiliki jumlah mahasiswa paling banyak. Informasi ini berguna untuk analisis
+                        data akademik karena dapat membantu melihat distribusi mahasiswa pada tiap jurusan.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Mata Kuliah yang Diambil oleh Mahasiswa Tertentu
+                    </div>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-30.png" alt="Gambar 30. Route untuk menampilkan mata kuliah mahasiswa tertentu">
+                        <figcaption>Gambar 30. Route untuk menampilkan mata kuliah mahasiswa tertentu</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-31.png" alt="Gambar 31. View mata kuliah mahasiswa tertentu">
+                        <figcaption>Gambar 31. View mata kuliah mahasiswa tertentu</figcaption>
+                    </figure>
+
+                    <p>
+                        Latihan ini memanfaatkan relationship Many-to-Many antara model Student dan Subject yang dihubungkan
+                        melalui tabel pivot student_subject. Query digunakan untuk mengambil data mata kuliah yang dimiliki oleh
+                        mahasiswa tertentu berdasarkan identitas mahasiswa tersebut.
+                    </p>
+                    <p class="sub-heading">Hasil</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-32.png" alt="Gambar 32. Hasil mata kuliah yang diambil oleh mahasiswa tertentu">
+                        <figcaption>Gambar 32. Hasil mata kuliah yang diambil oleh mahasiswa tertentu</figcaption>
+                    </figure>
+
+                    <p>
+                        Hasil yang ditampilkan berupa daftar mata kuliah yang diambil oleh mahasiswa tertentu. Setiap mata kuliah
+                        yang muncul berasal dari data relasi yang tersimpan pada tabel pivot. Dari hasil tersebut dapat dilihat bahwa
+                        satu mahasiswa dapat mengambil lebih dari satu mata kuliah.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">4</span>
+                        Total SKS yang Diambil Setiap Mahasiswa
+                    </div>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-33.png" alt="Gambar 33. Route untuk menghitung total SKS setiap mahasiswa">
+                        <figcaption>Gambar 33. Route untuk menghitung total SKS setiap mahasiswa</figcaption>
+                    </figure>
+
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-34.png" alt="Gambar 34. View total SKS setiap mahasiswa">
+                        <figcaption>Gambar 34. View total SKS setiap mahasiswa</figcaption>
+                    </figure>
+
+                    <p>
+                        Pada latihan ini dilakukan perhitungan total SKS yang diambil oleh masing-masing mahasiswa. Data SKS diperoleh
+                        dari relationship antara mahasiswa dan mata kuliah, kemudian dijumlahkan menggunakan fungsi <code>sum('sks')</code>.
+                    </p>
+                    <p class="sub-heading">Hasil</p>
+                    
+                    <figure class="screenshot">
+                        <img src="images/laprak9-35.png" alt="Gambar 35. Hasil total SKS setiap mahasiswa">
+                        <figcaption>Gambar 35. Hasil total SKS setiap mahasiswa</figcaption>
+                    </figure>
+
+                    <p>
+                        Hasil yang diperoleh menunjukkan jumlah total SKS yang diambil oleh setiap mahasiswa berdasarkan mata kuliah
+                        yang dipilih. Perhitungan dilakukan secara otomatis oleh Laravel menggunakan koleksi data yang diperoleh dari
+                        relationship.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 7. HASIL DAN PEMBAHASAN -->
+            <div class="content-card" id="hasil">
+                <div class="section-heading">
+                    <span class="section-number">7</span> Hasil & Pembahasan
+                </div>
+
+                <p class="sub-heading">Hasil Pembuatan Database dan Migration</p>
+                <p>
+                    Berdasarkan proses migration yang telah dilakukan, seluruh tabel berhasil dibuat pada database MySQL sesuai
+                    dengan rancangan yang telah ditentukan. Tabel yang berhasil dibuat meliputi tabel majors, students, subjects,
+                    dan student_subject. Setiap tabel memiliki struktur yang sesuai dengan kebutuhan sistem akademik sederhana yang
+                    dikembangkan.
+                </p>
+                <p>
+                    Pada tabel students terdapat foreign key <code>major_id</code> yang berfungsi menghubungkan mahasiswa dengan jurusan.
+                    Sedangkan tabel student_subject digunakan sebagai tabel penghubung (pivot table) yang menghubungkan mahasiswa dan
+                    mata kuliah dalam relationship Many-to-Many.
+                </p>
+
+                <p class="sub-heading">Hasil Pembuatan Model dan Relationship</p>
+                <p>
+                    Model Major, Student, dan Subject berhasil dibuat dan dikonfigurasi menggunakan Eloquent Relationship Laravel.
+                    Relationship One-to-Many diterapkan antara model Major dan Student, sedangkan relationship Many-to-Many diterapkan
+                    antara model Student dan Subject.
+                </p>
+                <p>
+                    Hasil implementasi relationship memungkinkan data antar tabel saling terhubung sehingga informasi jurusan mahasiswa
+                    maupun mata kuliah yang diambil dapat diakses dengan mudah melalui model Laravel. Penggunaan Eloquent Relationship
+                    juga membuat kode program menjadi lebih sederhana dan mudah dipahami dibandingkan menggunakan query SQL secara manual.
+                </p>
+
+                <p class="sub-heading">Hasil Seeder Database</p>
+                <p>
+                    Proses seeding berhasil menambahkan data awal ke dalam database secara otomatis. Tabel majors berhasil terisi data
+                    jurusan, tabel subjects berhasil terisi data mata kuliah beserta jumlah SKS, dan tabel students berhasil terisi data
+                    mahasiswa.
+                </p>
+                <p>
+                    Selain itu, tabel student_subject juga berhasil menyimpan relasi antara mahasiswa dan mata kuliah. Dengan adanya data
+                    yang telah dihasilkan oleh seeder, proses pengujian relationship dapat dilakukan dengan lebih mudah tanpa perlu
+                    memasukkan data secara manual satu per satu.
+                </p>
+
+                <p class="sub-heading">Hasil Tampilan Data Mahasiswa</p>
+                <p>
+                    Halaman daftar mahasiswa berhasil menampilkan seluruh data mahasiswa yang tersimpan pada database. Informasi yang
+                    ditampilkan meliputi NIM, nama mahasiswa, alamat, serta jurusan yang dimiliki oleh masing-masing mahasiswa.
+                </p>
+                <p>
+                    Data yang muncul berasal dari database melalui controller dan diteruskan ke view menggunakan Eloquent ORM. Hal ini
+                    menunjukkan bahwa proses komunikasi antara model, controller, dan view telah berjalan dengan baik sesuai konsep MVC
+                    pada Laravel.
+                </p>
+
+                <p class="sub-heading">Hasil Latihan Query Relationship</p>
+                <ul>
+                    <li>
+                        <strong>Menampilkan semua mahasiswa beserta jurusan dan mata kuliahnya:</strong> query berhasil menampilkan data
+                        mahasiswa lengkap dengan informasi jurusan dan mata kuliah yang diambil. Penggunaan eager loading melalui method
+                        <code>with()</code> membuat proses pengambilan data menjadi lebih efisien.
+                    </li>
+                    <li class="mt-2">
+                        <strong>Menampilkan jurusan yang memiliki mahasiswa terbanyak:</strong> query berhasil menampilkan jumlah mahasiswa
+                        pada setiap jurusan. Method <code>withCount()</code> mempermudah proses perhitungan jumlah mahasiswa tanpa membuat
+                        query SQL yang kompleks.
+                    </li>
+                    <li class="mt-2">
+                        <strong>Menampilkan mata kuliah yang diambil mahasiswa tertentu:</strong> query berhasil menampilkan daftar mata
+                        kuliah berdasarkan relationship Many-to-Many melalui tabel pivot student_subject.
+                    </li>
+                    <li class="mt-2">
+                        <strong>Menampilkan total SKS yang diambil setiap mahasiswa:</strong> query berhasil menghitung total SKS berdasarkan
+                        mata kuliah yang diambil menggunakan fungsi <code>sum('sks')</code>.
+                    </li>
+                </ul>
+
+                <p class="sub-heading">Analisis Hasil Praktikum</p>
+                <p>
+                    Berdasarkan hasil praktikum yang telah dilakukan, Laravel terbukti mampu mengelola relationship antar tabel dengan
+                    baik melalui Eloquent ORM. Relationship One-to-Many dan Many-to-Many dapat diimplementasikan dengan lebih sederhana
+                    dibandingkan menggunakan query SQL secara langsung.
+                </p>
+                <p class="mb-0">
+                    Selain itu, penggunaan migration mempermudah pembuatan struktur database, sedangkan seeder mempercepat proses pengisian
+                    data awal. Fitur-fitur tersebut membuat proses pengembangan aplikasi menjadi lebih terstruktur, efisien, dan mudah untuk
+                    dipelajari maupun dikembangkan lebih lanjut.
+                </p>
+            </div>
+
+            <!-- 8. KESIMPULAN -->
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">8</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p>
+                        Berdasarkan praktikum yang telah dilaksanakan, dapat disimpulkan bahwa Laravel menyediakan fitur Eloquent ORM
+                        yang sangat membantu dalam pengelolaan database dan relationship antar tabel. Pada praktikum ini berhasil
+                        diterapkan relationship One-to-Many antara tabel majors dan students, serta relationship Many-to-Many antara
+                        tabel students dan subjects melalui tabel pivot student_subject.
+                    </p>
+                    <p>
+                        Selain itu, proses pembuatan migration, model, controller, route, view, dan seeder berhasil dilakukan dengan baik
+                        sehingga aplikasi dapat menampilkan data yang saling berelasi secara dinamis. Hasil latihan juga menunjukkan bahwa
+                        Laravel mampu melakukan pengolahan dan pengambilan data relationship secara efisien menggunakan fitur Eloquent
+                        Relationship.
+                    </p>
+                    <p class="mb-0">
+                        Melalui praktikum ini, pemahaman mengenai pengelolaan database dan hubungan antar tabel dalam Laravel menjadi
+                        lebih baik serta memberikan pengalaman dalam membangun aplikasi web yang terstruktur sesuai konsep MVC.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">← Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
