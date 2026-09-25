@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 3 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .mvc-card {
+            border: 1px solid #ffe0ec;
+            border-radius: 10px;
+            padding: 18px 20px;
+            background: #fff9fb;
+            margin-bottom: 14px;
+        }
+
+        .mvc-card .mvc-label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #c0547a;
+            margin-bottom: 6px;
+        }
+
+        .mvc-card code {
+            background: #fce4ec;
+            color: #880e4f;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Aplikasi Mobile</div>
+        <h1>Laporan Praktikum 3<br>Input Widgets & Forms: Menangkap Data, Dropdown, dan Validasi</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2025/2026
+        </p>
+        <p class="meta-info">
+            Dosen Pengampu: Nurfiah, S.ST., M.Kom
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#langkah"><span class="toc-num">3.</span> Langkah-Langkah Praktikum</a></li>
+                    <li><a href="#latihan"><span class="toc-num">4.</span> Latihan / Tugas</a></li>
+                    <li><a href="#pembahasan"><span class="toc-num">5.</span> Pembahasan</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">6.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <!-- 1. PENDAHULUAN -->
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Pada hampir semua aplikasi mobile, form input adalah bagian yang tidak bisa
+                    dihindari, misalnya form login, form registrasi, atau form pencatatan
+                    transaksi seperti yang dikerjakan pada praktikum ini. Oleh karena itu,
+                    penting bagi saya untuk memahami cara menangkap data dari pengguna
+                    menggunakan controller, menampilkan pilihan lewat dropdown, serta
+                    menerapkan validasi agar data yang masuk ke sistem tidak kosong atau salah
+                    format.
+                </p>
+                <p>
+                    Pada praktikum ini, saya membuat halaman AddTransactionScreen yang berisi
+                    input Judul Transaksi, Nominal, dan Kategori (dropdown), lengkap dengan
+                    validasi pada masing-masing kolom. Selain itu, terdapat pula tugas tambahan
+                    untuk menambahkan input Tanggal Transaksi menggunakan fungsi
+                    showDatePicker, yang juga dibahas pada laporan ini.
+                </p>
+            </div>
+
+            <!-- 2. TUJUAN -->
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <p>Tujuan yang ingin dicapai dari praktikum ini adalah:</p>
+                <ul>
+                    <li>Mampu menangkap data teks yang diketik pengguna melalui TextEditingController.</li>
+                    <li>Mampu menerapkan widget dropdown statis menggunakan DropdownButtonFormField.</li>
+                    <li>Mampu menerapkan validasi input untuk mencegah data kosong atau format yang salah sebelum data disimpan ke dalam sistem.</li>
+                </ul>
+            </div>
+
+            <!-- 3. LANGKAH-LANGKAH -->
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Langkah-Langkah Praktikum
+                </div>
+
+                <!-- STEP 1 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Membuat File add_transaction_screen.dart
+                    </div>
+                    <p>
+                        Langkah pertama adalah membuat file baru bernama
+                        add_transaction_screen.dart di dalam folder lib/. File ini akan berisi
+                        seluruh kode tampilan dan logika form pencatatan transaksi.
+                    </p>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Persiapan State dan Controller
+                    </div>
+                    <p>
+                        Karena isi formulir (teks dan pilihan dropdown) akan terus berubah
+                        setiap kali pengguna mengetik atau memilih opsi, maka widget yang
+                        digunakan adalah StatefulWidget. Saya menyiapkan sebuah
+                        GlobalKey&lt;FormState&gt; untuk mengontrol dan memicu validasi seluruh
+                        Form, serta dua buah TextEditingController untuk membaca input Judul
+                        Transaksi dan Nominal. Controller yang sudah dibuat juga wajib
+                        dibersihkan (dispose) saat halaman ditutup agar tidak terjadi memory
+                        leak.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge1.png" alt="Gambar 1. Cuplikan kode deklarasi GlobalKey, TextEditingController, dan dispose()">
+                        <figcaption>Gambar 1. Cuplikan kode deklarasi GlobalKey, TextEditingController, dan dispose() pada add_transaction_screen.dart</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Membuat Kolom Input (TextFormField)
+                    </div>
+                    <p>
+                        Seluruh kolom input dibungkus dengan widget Form dan dihubungkan dengan
+                        _formKey yang sudah disiapkan sebelumnya. Kolom Judul Transaksi
+                        divalidasi agar tidak boleh kosong, sedangkan kolom Nominal menggunakan
+                        keyboardType: TextInputType.number agar keyboard yang muncul otomatis
+                        berupa angka, dan validasinya memastikan nilai tersebut wajib diisi
+                        serta harus berupa angka yang valid.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge2.png" alt="Gambar 2. Cuplikan kode TextFormField Judul Transaksi dan Nominal">
+                        <figcaption>Gambar 2. Cuplikan kode TextFormField untuk Judul Transaksi dan Nominal beserta validatornya</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">4</span>
+                        Dropdown Kategori dan Tombol Simpan
+                    </div>
+                    <p>
+                        Untuk pilihan kategori transaksi, saya menggunakan
+                        DropdownButtonFormField dengan empat opsi statis, yaitu Makanan,
+                        Transportasi, Hiburan, dan Lainnya. Setelah semua kolom terisi, tombol
+                        Simpan Transaksi akan memanggil _formKey.currentState!.validate() yang
+                        secara otomatis menjalankan validator pada seluruh kolom form sekaligus.
+                        Jika semua kolom valid, aplikasi akan menampilkan SnackBar berwarna
+                        hijau sebagai tanda transaksi berhasil disimpan.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge3.png" alt="Gambar 3. Cuplikan kode DropdownButtonFormField dan ElevatedButton Simpan Transaksi">
+                        <figcaption>Gambar 3. Cuplikan kode DropdownButtonFormField Kategori dan ElevatedButton Simpan Transaksi</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">5</span>
+                        Hasil Pengujian Form Dasar
+                    </div>
+                    <p>
+                        Setelah kode dijalankan, tampilan halaman Catat Transaksi Baru berhasil
+                        muncul sesuai rancangan pada modul. Terlihat kolom Judul Transaksi
+                        terisi "makan malam", kolom Nominal terisi "50.000", serta dropdown
+                        Kategori menampilkan pilihan "Makanan" dengan tema warna ungu
+                        (deepPurple) pada AppBar dan tombol Simpan Transaksi.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge4.png" alt="Gambar 4. Tampilan awal form Catat Transaksi Baru">
+                        <figcaption>Gambar 4. Tampilan awal form Catat Transaksi Baru (hasil menjalankan aplikasi)</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <!-- 4. LATIHAN / TUGAS -->
+            <div class="content-card" id="latihan">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Latihan / Tugas: Input Tanggal Transaksi
+                </div>
+                <p>
+                    Sesuai instruksi pada modul bagian 1.5, saya menambahkan satu input baru
+                    sebelum tombol Simpan, yaitu kolom Tanggal Transaksi. Kolom ini wajib diisi
+                    dan pengisiannya dilakukan melalui fungsi showDatePicker, bukan diketik
+                    manual.
+                </p>
+
+                <!-- STEP 1 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Modifikasi Kode
+                    </div>
+                    <p>
+                        Saya menambahkan sebuah TextEditingController baru (_dateController)
+                        khusus untuk menampung tanggal yang dipilih, serta sebuah fungsi
+                        asinkron _pilihTanggal() yang memanggil showDatePicker bawaan Flutter.
+                        Hasil tanggal yang dipilih pengguna kemudian diformat secara manual
+                        menjadi bentuk DD/MM/YYYY sebelum dimasukkan ke dalam controller.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge5.png" alt="Gambar 5. Cuplikan kode fungsi _pilihTanggal()">
+                        <figcaption>Gambar 5. Cuplikan kode fungsi _pilihTanggal() yang memanggil showDatePicker</figcaption>
+                    </figure>
+
+                    <p>
+                        Kolom TextFormField untuk tanggal dibuat bersifat readOnly agar pengguna
+                        tidak bisa mengetik manual dan tetap harus memilih lewat kalender, baik
+                        dengan menekan tombol ikon (+) pada suffixIcon maupun dengan menyentuh
+                        (tap) area kolom itu sendiri. Validator pada kolom ini memastikan
+                        tanggal wajib diisi sebelum form dapat disimpan.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge6.png" alt="Gambar 6. Cuplikan kode TextFormField Tanggal Transaksi">
+                        <figcaption>Gambar 6. Cuplikan kode TextFormField Tanggal Transaksi beserta validatornya</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Hasil Pengujian Fitur Tanggal
+                    </div>
+                    <p>
+                        Ketika tombol (+) pada kolom Tanggal Transaksi ditekan, showDatePicker
+                        bawaan Flutter berhasil muncul dalam bentuk kalender, menampilkan bulan
+                        September 2026 dengan tanggal hari ini (25 September) tersorot berwarna
+                        ungu sebagai default pilihan.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge7.png" alt="Gambar 7. Date picker terbuka">
+                        <figcaption>Gambar 7. Date picker terbuka saat tombol (+) pada kolom Tanggal Transaksi ditekan</figcaption>
+                    </figure>
+
+                    <p>
+                        Setelah tanggal dipilih (26 September 2026) dan tombol OK ditekan, nilai
+                        tanggal otomatis terisi ke dalam kolom dengan format DD/MM/YYYY, yaitu
+                        "26/09/2026", sesuai dengan format yang diminta pada instruksi latihan.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge8.png" alt="Gambar 8. Kolom Tanggal Transaksi terisi otomatis">
+                        <figcaption>Gambar 8. Kolom Tanggal Transaksi terisi otomatis setelah tanggal dipilih</figcaption>
+                    </figure>
+
+                    <p>
+                        Terakhir, saat seluruh kolom (Judul, Nominal, Tanggal, dan Kategori)
+                        sudah terisi dengan benar dan tombol Simpan Transaksi ditekan, validasi
+                        berhasil dilewati oleh semua kolom sehingga muncul SnackBar hijau di
+                        bagian bawah layar bertuliskan "Tersimpan: makan malam (Rp 50000) -
+                        26/09/2026". Hal ini membuktikan bahwa validator pada kolom tanggal yang
+                        baru ditambahkan sudah berjalan sebagaimana mestinya, karena form tidak
+                        akan lolos apabila kolom tanggal masih kosong.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/imge9.png" alt="Gambar 9. Transaksi berhasil disimpan">
+                        <figcaption>Gambar 9. Transaksi berhasil disimpan setelah seluruh kolom termasuk tanggal terisi dan tervalidasi</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- 5. PEMBAHASAN -->
+            <div class="content-card" id="pembahasan">
+                <div class="section-heading">
+                    <span class="section-number">5</span> Pembahasan
+                </div>
+                <p>
+                    Dari hasil pengujian yang telah dilakukan, seluruh validator pada form
+                    berjalan sesuai dengan yang diharapkan. Ketika salah satu kolom seperti
+                    Judul, Nominal, atau Tanggal masih kosong, tombol Simpan Transaksi tidak
+                    akan berhasil menjalankan aksi simpan karena
+                    _formKey.currentState!.validate() akan mengembalikan nilai false.
+                    Sebaliknya, ketika seluruh kolom sudah terisi dengan benar, validasi akan
+                    lolos dan SnackBar konfirmasi berwarna hijau akan muncul.
+                </p>
+                <p>
+                    Penambahan input Tanggal Transaksi pada bagian latihan juga menunjukkan
+                    bahwa konsep Form dan GlobalKey pada Flutter cukup fleksibel, karena kolom
+                    baru dapat ditambahkan ke dalam Form yang sama tanpa perlu mengubah logika
+                    validasi kolom-kolom yang sudah ada sebelumnya. Selain itu, penggunaan
+                    showDatePicker jauh lebih baik dibandingkan pengguna mengetik tanggal
+                    secara manual, karena format tanggal yang dihasilkan pasti konsisten dan
+                    terhindar dari kesalahan penulisan.
+                </p>
+                <p>
+                    Sebagai catatan tambahan, file add_transaction_screen.dart yang berisi form
+                    ini juga sudah dihubungkan dengan halaman Dashboard hasil Praktikum II
+                    melalui import pada main.dart, di mana tombol Pemasukan/Pengeluaran serta
+                    sebuah FloatingActionButton "Catat Transaksi" pada Dashboard akan
+                    mengarahkan pengguna langsung menuju halaman AddTransactionScreen ini
+                    menggunakan Navigator.push.
+                </p>
+
+                <figure class="screenshot">
+                    <img src="./images/imge10.png" alt="Gambar 10. Cuplikan kode FloatingActionButton pada DashboardScreen">
+                    <figcaption>Gambar 10. Cuplikan kode FloatingActionButton pada DashboardScreen (main.dart) yang membuka AddTransactionScreen</figcaption>
+                </figure>
+
+                <figure class="screenshot">
+                    <img src="./images/imge11.png" alt="Gambar 11. Cuplikan kode _buildActionButton">
+                    <figcaption>Gambar 11. Cuplikan kode _buildActionButton yang juga diarahkan membuka AddTransactionScreen</figcaption>
+                </figure>
+            </div>
+
+            <!-- 6. KESIMPULAN -->
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">6</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p class="mb-0">
+                        Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa
+                        form input pada Flutter dapat dibangun dengan memadukan beberapa
+                        komponen utama, yaitu Form dan GlobalKey, TextFormField, serta
+                        TextEditingController sehingga beberapa input dapat divalidasi dalam
+                        satu kesatuan. Validasi berhasil diterapkan pada seluruh kolom form,
+                        yaitu Judul, Nominal, Tanggal, dan Kategori, untuk mencegah data kosong
+                        maupun format yang tidak sesuai sebelum data disimpan. Selain itu,
+                        DropdownButtonFormField berhasil digunakan untuk menyediakan pilihan
+                        kategori transaksi yang bersifat statis. Input Tanggal Transaksi juga
+                        berhasil ditambahkan menggunakan showDatePicker, lengkap dengan
+                        validasi wajib diisi, dan telah diuji coba dengan hasil yang sesuai.
+                        Melalui praktikum ini, saya menjadi lebih memahami cara membuat form
+                        input dan pentingnya validasi data dalam pengembangan aplikasi mobile
+                        agar data yang dimasukkan pengguna tetap sesuai dan dapat diproses
+                        dengan baik.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">← Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
