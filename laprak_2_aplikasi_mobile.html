@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 2 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+            white-space: pre;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Aplikasi Mobile</div>
+        <h1>Laporan Praktikum 2<br>Pengenalan Widgets, Layouting &amp; Styling (Row, Column, Container, ListTile)</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2025/2026
+        </p>
+        <p class="meta-info">
+            Dosen Pengampu: Nurfiah, S.ST., M.Kom
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#langkah"><span class="toc-num">3.</span> Langkah-Langkah Praktikum</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">4.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <!-- 1. PENDAHULUAN -->
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Flutter adalah framework open-source dari Google yang digunakan untuk
+                    membangun aplikasi mobile, web, dan desktop dari satu basis kode (single
+                    codebase) menggunakan bahasa pemrograman Dart. Konsep utama dalam Flutter
+                    adalah segala sesuatu di tampilan aplikasi merupakan sebuah widget, mulai
+                    dari teks, tombol, hingga layout secara keseluruhan.
+                </p>
+                <p>
+                    Pada praktikum ini, dipelajari dua topik dasar dalam pengembangan aplikasi
+                    Flutter. Praktikum 1 membahas pengenalan widget, khususnya perbedaan antara
+                    StatelessWidget dan StatefulWidget, serta penerapan fungsi setState() untuk
+                    membuat tampilan yang interaktif. Praktikum 2 melanjutkan dengan konsep
+                    layouting dan styling menggunakan widget Row, Column, Container, dan
+                    ListTile untuk menyusun tampilan aplikasi yang lebih rapi dan terstruktur,
+                    dengan studi kasus membangun dashboard sederhana aplikasi keuangan (Expense
+                    Tracker).
+                </p>
+            </div>
+
+            <!-- 2. TUJUAN -->
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <p>Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:</p>
+                <ul>
+                    <li>Memahami kerangka dasar aplikasi Flutter (MaterialApp dan Scaffold).</li>
+                    <li>Membedakan penggunaan StatelessWidget dan StatefulWidget.</li>
+                    <li>Menerapkan fungsi setState() untuk membuat UI yang interaktif.</li>
+                    <li>Menerapkan widget Row untuk menyusun deretan elemen secara horizontal, seperti deretan tombol aksi.</li>
+                    <li>Menerapkan widget Column untuk menyusun elemen secara vertikal, seperti daftar transaksi.</li>
+                    <li>Mengatur padding, margin, dan warna pada Container untuk mempercantik tampilan.</li>
+                    <li>Menggunakan ListTile untuk membuat baris daftar (list) secara instan dan rapi.</li>
+                </ul>
+            </div>
+
+            <!-- 3. LANGKAH-LANGKAH -->
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Langkah-Langkah Praktikum
+                </div>
+
+                <!-- STEP 1: PRAKTIKUM 1 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Praktikum 1 — Pengenalan Widgets (Stateless, Stateful, &amp; Manajemen State Dasar)
+                    </div>
+                    <div class="code-block">import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+// 1. WIDGET UTAMA
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Expense Tracker',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const DashboardScreen(), // Halaman awal aplikasi
+    );
+  }
+}
+
+// 2. HALAMAN UTAMA (Scaffold)
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Praktikum 1: Widgets'),
+        backgroundColor: Colors.blue,
+      ),
+      // Padding untuk memberikan jarak dari tepi layar
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GreetingWidget(), // Memanggil StatelessWidget
+            SizedBox(height: 20), // Jarak vertikal
+            BalanceCardWidget(), // Memanggil StatefulWidget
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// 3. STATELESS WIDGET (Sapaan Pengguna)
+class GreetingWidget extends StatelessWidget {
+  const GreetingWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        // Ikon Profil
+        CircleAvatar(
+          radius: 24,
+          backgroundColor: Colors.blueAccent,
+          child: Icon(Icons.person, size: 30, color: Colors.white),
+        ),
+        SizedBox(width: 12),
+        // Teks Sapaan
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Halo, Budi',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Selamat datang kembali!',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+// 4. STATEFUL WIDGET (Kartu Saldo dengan Toggle)
+class BalanceCardWidget extends StatefulWidget {
+  const BalanceCardWidget({super.key});
+
+  @override
+  State&lt;BalanceCardWidget&gt; createState() =&gt; _BalanceCardWidgetState();
+}
+
+class _BalanceCardWidgetState extends State&lt;BalanceCardWidget&gt; {
+  // Variabel State: Menyimpan status apakah saldo terlihat atau disensor
+  bool _isBalanceVisible = true;
+
+  // Fungsi untuk mengubah state
+  void _toggleVisibility() {
+    setState(() {
+      _isBalanceVisible = !_isBalanceVisible; // Membalik nilai boolean (true &lt;-&gt; false)
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      // TUGAS 1: warna diubah dari Colors.blueAccent -&gt; Colors.teal
+      color: Colors.teal,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Baris atas kartu: Teks "Saldo Utama" &amp; Tombol Ikon
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Saldo Utama',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white70,
+                  ),
+                ),
+                // Tombol Mata
+                IconButton(
+                  icon: Icon(
+                    // Logika if-else singkat (Ternary Operator)
+                    _isBalanceVisible ? Icons.visibility : Icons.visibility_off,
+                    color: Colors.white,
+                  ),
+                  onPressed: _toggleVisibility, // Memanggil fungsi ubah state
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            // Teks Nominal Saldo
+            Text(
+              // Logika if-else untuk menampilkan saldo atau sensor
+              _isBalanceVisible ? 'Rp 5.000.000' : 'Rp *********',
+              style: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            // TUGAS 2: teks statis tambahan di bawah nominal saldo
+            const SizedBox(height: 4),
+            const Text(
+              'No. Rekening: 1234-5678',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.white70,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+</div>
+
+                    <p class="mt-3">Penjelasan kode:</p>
+                    <ul>
+                        <li><strong>void main()</strong> — Titik masuk (entry point) aplikasi. Fungsi runApp(const MyApp()) memerintahkan Flutter untuk menjalankan widget MyApp sebagai akar (root) dari seluruh aplikasi.</li>
+                        <li><strong>class MyApp</strong> — Merupakan StatelessWidget karena konfigurasi aplikasi (judul, tema, halaman awal) tidak pernah berubah selama aplikasi berjalan. Di dalamnya terdapat MaterialApp, yaitu widget bawaan Flutter yang menyediakan struktur dasar aplikasi bergaya Material Design. Properti home: const DashboardScreen() menentukan bahwa DashboardScreen adalah halaman yang pertama kali ditampilkan.</li>
+                        <li><strong>class DashboardScreen</strong> — Menggunakan Scaffold, yaitu kerangka halaman standar yang menyediakan struktur seperti AppBar (bilah judul di atas) dan body (isi halaman). Di dalam body, digunakan Padding agar konten tidak menempel ke tepi layar, lalu Column untuk menyusun GreetingWidget dan BalanceCardWidget secara vertikal, dengan SizedBox(height: 20) sebagai jarak antar keduanya.</li>
+                        <li><strong>class GreetingWidget</strong> — StatelessWidget yang menampilkan sapaan. Menggunakan Row agar CircleAvatar (ikon profil) dan Column (dua baris teks sapaan) tersusun sejajar dari kiri ke kanan. Karena tidak ada data yang berubah, tidak diperlukan setState() di sini.</li>
+                        <li><strong>class BalanceCardWidget</strong> — StatefulWidget karena kartu ini punya data yang bisa berubah, yaitu status tampil/sembunyi saldo. Kelas ini dipasangkan dengan _BalanceCardWidgetState yang menyimpan variabel _isBalanceVisible.
+                            <ul class="mt-2">
+                                <li>IconButton pada bagian kanan atas kartu memanggil fungsi _toggleVisibility() setiap kali ditekan.</li>
+                                <li>Di dalam _toggleVisibility(), dipanggil setState(() { _isBalanceVisible = !_isBalanceVisible; }). Pemanggilan setState() inilah yang memberi tahu Flutter bahwa data berubah, sehingga method build() dijalankan ulang dan tampilan diperbarui secara otomatis.</li>
+                                <li>Teks nominal saldo menggunakan operator ternary _isBalanceVisible ? 'Rp 5.000.000' : 'Rp *********' untuk menampilkan angka asli atau versi tersensor tergantung nilai boolean tersebut.</li>
+                                <li>Sebagai tugas tambahan, warna kartu diubah menjadi Colors.teal dan ditambahkan teks statis "No. Rekening: 1234-5678" di bawah nominal saldo.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-heading">Hasilnya:</p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak21.png" alt="Gambar 1. Hasil Praktikum 1: Widgets">
+                        <figcaption>Gambar 1. Tampilan hasil Praktikum 1 — sapaan pengguna dan kartu saldo dengan toggle visibility</figcaption>
+                    </figure>
+                    <p>
+                        Hasil menunjukkan sebuah kartu berwarna (awalnya biru, setelah dimodifikasi
+                        menjadi teal) di bawah sapaan "Halo, Budi!". Kartu tersebut menampilkan
+                        tulisan "Total Saldo" beserta nominalnya dan sebuah ikon mata di pojok
+                        kanan. Saat ikon mata ditekan, nominal saldo berpindah antara ditampilkan
+                        penuh ("Rp 5.000.000") dan disensor ("Rp *********"), membuktikan bahwa
+                        StatefulWidget dan setState() berhasil membuat tampilan bereaksi terhadap
+                        interaksi pengguna, sementara bagian sapaan di atasnya tetap statis (tidak
+                        berubah) karena dibangun dengan StatelessWidget.
+                    </p>
+                </div>
+
+                <!-- STEP 2: PRAKTIKUM 2 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Praktikum 2 — Layouting &amp; Styling (Row, Column, Container, dan ListTile)
+                    </div>
+                    <div class="code-block">import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+// 1. WIDGET UTAMA (Root Aplikasi)
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Expense Tracker',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const DashboardScreen(),
+    );
+  }
+}
+
+// 2. HALAMAN UTAMA (Scaffold) - DIPERBARUI
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Praktikum 2: Layouting'),
+        backgroundColor: Colors.blue,
+      ),
+      // MENGGUNAKAN SingleChildScrollView agar layar bisa di-scroll
+      body: const SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GreetingWidget(), // Dari Modul 1
+              SizedBox(height: 20),
+              BalanceCardWidget(), // Dari Modul 1
+              SizedBox(height: 20),
+              ActionButtonsWidget(), // WIDGET BARU MODUL 2
+              SizedBox(height: 20),
+              RecentTransactionsWidget(), // WIDGET BARU MODUL 2
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// 3. STATELESS WIDGET (Sapaan - Dari Modul 1)
+class GreetingWidget extends StatelessWidget {
+  const GreetingWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        CircleAvatar(
+          radius: 24,
+          backgroundColor: Colors.blueAccent,
+          child: Icon(Icons.person, size: 30, color: Colors.white),
+        ),
+        SizedBox(width: 12),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Halo, Budi', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text('Selamat datang kembali!', style: TextStyle(fontSize: 14, color: Colors.grey)),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+// 4. STATEFUL WIDGET (Kartu Saldo - Dari Modul 1)
+class BalanceCardWidget extends StatefulWidget {
+  const BalanceCardWidget({super.key});
+
+  @override
+  State&lt;BalanceCardWidget&gt; createState() =&gt; _BalanceCardWidgetState();
+}
+
+class _BalanceCardWidgetState extends State&lt;BalanceCardWidget&gt; {
+  bool _isBalanceVisible = true;
+
+  void _toggleVisibility() {
+    setState(() {
+      _isBalanceVisible = !_isBalanceVisible;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      color: Colors.blueAccent,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Saldo Utama', style: TextStyle(fontSize: 16, color: Colors.white70)),
+                IconButton(
+                  icon: Icon(_isBalanceVisible ? Icons.visibility : Icons.visibility_off, color: Colors.white),
+                  onPressed: _toggleVisibility,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              _isBalanceVisible ? 'Rp 5.000.000' : 'Rp *********',
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// 5. WIDGET TOMBOL AKSI (ROW) - BARU
+class ActionButtonsWidget extends StatelessWidget {
+  const ActionButtonsWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Menggunakan Row untuk menata tombol secara horizontal
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Jarak dibagi rata
+      children: [
+        _buildActionButton(Icons.arrow_downward, 'Pemasukan', Colors.green),
+        _buildActionButton(Icons.arrow_upward, 'Pengeluaran', Colors.red),
+        _buildActionButton(Icons.swap_horiz, 'Transfer', Colors.blue),
+      ],
+    );
+  }
+
+  // Fungsi pembantu untuk membuat desain tombol agar kode tidak berulang
+  Widget _buildActionButton(IconData icon, String label, Color color) {
+    return Column(
+      children: [
+        // Container untuk membungkus ikon dengan warna background
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.2), // Warna transparan
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(icon, color: color, size: 28),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          label,
+          style: const TextStyle(fontWeight: FontWeight.w500),
+        ),
+      ],
+    );
+  }
+}
+
+// Model bantuan sederhana untuk satu baris transaksi,
+// supaya menambah transaksi baru (Tugas 2) tidak perlu menulis ulang ListTile+Divider.
+class _TransaksiItem {
+  final IconData icon;
+  final Color iconColor;
+  final String title;
+  final String tanggal;
+  final String nominal;
+  final bool isPengeluaran; // true = pengeluaran (merah), false = pemasukan (hijau)
+
+  const _TransaksiItem({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    required this.tanggal,
+    required this.nominal,
+    required this.isPengeluaran,
+  });
+}
+
+// 6. WIDGET DAFTAR TRANSAKSI (COLUMN &amp; LISTTILE) - BARU
+class RecentTransactionsWidget extends StatelessWidget {
+  const RecentTransactionsWidget({super.key});
+
+  // TUGAS 2: 2 transaksi fiktif baru ditambahkan di akhir daftar (Belanja Bulanan, Terima Bonus)
+  static const List&lt;_TransaksiItem&gt; _daftarTransaksi = [
+    _TransaksiItem(
+      icon: Icons.fastfood,
+      iconColor: Colors.redAccent,
+      title: 'Makan Siang',
+      tanggal: '13 Sep 2026',
+      nominal: '- Rp 50.000',
+      isPengeluaran: true,
+    ),
+    _TransaksiItem(
+      icon: Icons.attach_money,
+      iconColor: Colors.green,
+      title: 'Gaji Bulanan',
+      tanggal: '01 Sep 2026',
+      nominal: '+ Rp 5.000.000',
+      isPengeluaran: false,
+    ),
+    _TransaksiItem(
+      icon: Icons.directions_car,
+      iconColor: Colors.blueAccent,
+      title: 'Isi Bensin',
+      tanggal: '10 Sep 2026',
+      nominal: '- Rp 150.000',
+      isPengeluaran: true,
+    ),
+    // ----- Transaksi fiktif baru (Tugas 2) -----
+    _TransaksiItem(
+      icon: Icons.shopping_cart,
+      iconColor: Colors.orange,
+      title: 'Belanja Bulanan',
+      tanggal: '15 Sep 2026',
+      nominal: '- Rp 300.000',
+      isPengeluaran: true,
+    ),
+    _TransaksiItem(
+      icon: Icons.card_giftcard,
+      iconColor: Colors.green,
+      title: 'Terima Bonus',
+      tanggal: '17 Sep 2026',
+      nominal: '+ Rp 750.000',
+      isPengeluaran: false,
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Transaksi Terakhir',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 12),
+        // Menggunakan Card agar daftar transaksi memiliki bayangan/bingkai
+        Card(
+          elevation: 2,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Column(
+            children: [
+              for (int i = 0; i &lt; _daftarTransaksi.length; i++) ...[
+                ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: _daftarTransaksi[i].iconColor,
+                    child: Icon(_daftarTransaksi[i].icon, color: Colors.white),
+                  ),
+                  title: Text(_daftarTransaksi[i].title),
+                  subtitle: Text(_daftarTransaksi[i].tanggal),
+                  // TUGAS 1: warna merah untuk pengeluaran, hijau untuk pemasukan
+                  trailing: Text(
+                    _daftarTransaksi[i].nominal,
+                    style: TextStyle(
+                      color: _daftarTransaksi[i].isPengeluaran ? Colors.red : Colors.green,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                if (i != _daftarTransaksi.length - 1) const Divider(height: 1),
+              ],
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+</div>
+
+                    <p class="mt-3">Penjelasan kode:</p>
+                    <ul>
+                        <li><strong>class DashboardScreen (diperbarui)</strong> — body kini dibungkus dengan SingleChildScrollView sebelum Padding dan Column. Ini diperlukan karena daftar widget yang ditampilkan bertambah banyak (gabungan Praktikum 1 dan 2), sehingga tanpa SingleChildScrollView, layar akan mengalami overflow (konten terpotong) ketika tinggi total melebihi tinggi layar.</li>
+                        <li><strong>class ActionButtonsWidget</strong> — StatelessWidget yang menyusun tiga tombol aksi (Pemasukan, Pengeluaran, Transfer) menggunakan Row dengan mainAxisAlignment: MainAxisAlignment.spaceEvenly, sehingga jarak antar tombol maupun jarak ke tepi terbagi sama rata. Setiap tombol dibuat melalui fungsi bantu _buildActionButton() agar kode tidak ditulis berulang untuk tiga tombol berbeda. Di dalamnya, Container digunakan untuk membungkus ikon dengan padding, latar warna transparan (color.withOpacity(0.2)), dan sudut membulat (borderRadius).</li>
+                        <li><strong>class RecentTransactionsWidget</strong> — StatelessWidget yang menampilkan daftar riwayat transaksi. Judul "Transaksi Terakhir" dan daftar transaksi disusun ke bawah menggunakan Column. Daftar transaksi dibungkus Card agar memiliki bayangan (elevation) dan sudut membulat.
+                            <ul class="mt-2">
+                                <li>Setiap baris transaksi memakai ListTile dengan tiga bagian: leading (ikon dalam CircleAvatar), title (nama transaksi), subtitle (tanggal), dan trailing (nominal transaksi).</li>
+                                <li>Antar baris transaksi dipisahkan dengan Divider(height: 1) agar daftar terlihat rapi.</li>
+                                <li>Sebagai tugas tambahan, warna teks pada trailing diatur otomatis lewat properti isPengeluaran: merah (Colors.red) jika transaksi adalah pengeluaran, dan hijau (Colors.green) jika pemasukan. Selain itu, ditambahkan dua transaksi fiktif baru ("Belanja Bulanan" dan "Terima Bonus") ke dalam daftar yang sama tanpa perlu menulis ulang ListTile secara manual, karena data transaksi disimpan dalam satu list (_daftarTransaksi) dan ditampilkan menggunakan perulangan for.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-heading">Hasilnya:</p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak22.png" alt="Gambar 2. Hasil Praktikum 2: Layouting">
+                        <figcaption>Gambar 2. Tampilan hasil Praktikum 2 — dashboard lengkap dengan tombol aksi dan daftar transaksi terakhir</figcaption>
+                    </figure>
+                    <p>
+                        Hasil menunjukkan tampilan dashboard yang lebih lengkap: bagian sapaan dan
+                        kartu saldo dari Praktikum 1 tetap ada di bagian atas, diikuti oleh tiga
+                        tombol aksi (Masuk, Keluar, Transfer) yang tersusun sejajar dengan ikon
+                        berwarna berbeda (hijau, merah, biru), dan di bawahnya daftar "Transaksi
+                        Terakhir" yang menampilkan setiap transaksi lengkap dengan ikon, judul,
+                        tanggal, dan nominal. Nominal pengeluaran (misalnya "Makan Siang", "Isi
+                        Bensin", "Belanja Bulanan") tampil berwarna merah dengan tanda minus,
+                        sedangkan nominal pemasukan (misalnya "Gaji Bulanan", "Terima Bonus")
+                        tampil berwarna hijau dengan tanda plus. Keseluruhan halaman dapat
+                        digulir (scroll) tanpa error overflow, membuktikan SingleChildScrollView
+                        bekerja dengan baik menampung seluruh komponen dari Praktikum 1 dan 2
+                        dalam satu layar.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 4. KESIMPULAN -->
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p class="mb-0">
+                        Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa
+                        Flutter menyediakan dua jenis widget utama dengan fungsi yang berbeda,
+                        yaitu StatelessWidget untuk tampilan statis dan StatefulWidget untuk
+                        tampilan yang dapat berubah secara dinamis melalui fungsi setState().
+                        Selain itu, penyusunan tata letak (layout) pada Flutter sangat
+                        bergantung pada kombinasi widget dasar seperti Row untuk penyusunan
+                        horizontal, Column untuk penyusunan vertikal, Container untuk pengaturan
+                        padding/margin/warna, dan ListTile untuk membuat daftar yang rapi secara
+                        instan. Dengan menggabungkan widget-widget tersebut, dapat dibangun
+                        tampilan dashboard aplikasi yang informatif, interaktif, dan dapat
+                        menyesuaikan diri terhadap perubahan data maupun panjang konten, seperti
+                        yang diterapkan pada studi kasus aplikasi Expense Tracker dalam
+                        praktikum ini.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">← Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

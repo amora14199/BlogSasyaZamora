@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 4 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Aplikasi Mobile</div>
+        <h1>Laporan Praktikum 4<br>Navigasi &amp; Passing Data: Navigator, Konsep Stack, dan Constructor</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2025/2026
+        </p>
+        <p class="meta-info">
+            Dosen Pengampu: Nurfiah, S.ST., M.Kom
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#langkah"><span class="toc-num">3.</span> Langkah-Langkah Praktikum</a></li>
+                    <li><a href="#pembahasan"><span class="toc-num">4.</span> Pembahasan</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">5.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <!-- 1. PENDAHULUAN -->
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Hampir semua aplikasi mobile tidak hanya terdiri dari satu halaman saja,
+                    melainkan beberapa halaman yang saling terhubung — misalnya dari halaman
+                    daftar menuju halaman detail, lalu kembali lagi ke halaman awal. Di Flutter,
+                    perpindahan antar halaman ini diatur oleh widget bernama <strong>Navigator</strong>,
+                    yang bekerja seperti tumpukan kartu (stack): halaman baru akan diletakkan di
+                    atas tumpukan lewat <strong>Navigator.push</strong>, dan untuk kembali ke halaman
+                    sebelumnya cukup menghapus halaman teratas lewat <strong>Navigator.pop</strong>.
+                </p>
+                <p>
+                    Selain berpindah halaman, pada praktikum ini juga dipelajari cara mengirim
+                    data dari satu layar ke layar lainnya menggunakan <strong>Constructor</strong>.
+                    Halaman tujuan perlu menyiapkan variabel bertipe <em>final</em> sebagai
+                    penampung data, lalu menandai parameter tersebut dengan <strong>required</strong>
+                    agar data wajib diisi setiap kali halaman itu dibuka. Pada praktikum ini,
+                    saya membuat halaman baru bernama TransactionDetailScreen yang menampilkan
+                    detail satu transaksi, lalu menghubungkannya dengan daftar transaksi di
+                    Dashboard yang sudah dibuat pada praktikum-praktikum sebelumnya.
+                </p>
+            </div>
+
+            <!-- 2. TUJUAN -->
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <p>Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:</p>
+                <ul>
+                    <li>Menerapkan Navigator.push untuk berpindah ke layar baru.</li>
+                    <li>Menggunakan Navigator.pop untuk menutup layar setelah aksi selesai.</li>
+                    <li>Mengirim data (String, int) antar layar melalui Constructor.</li>
+                </ul>
+            </div>
+
+            <!-- 3. LANGKAH-LANGKAH -->
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Langkah-Langkah Praktikum
+                </div>
+
+                <!-- STEP 1 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Membuat Halaman Detail Transaksi (transaction_detail_screen.dart)
+                    </div>
+                    <p>
+                        Langkah pertama adalah membuat file baru bernama
+                        transaction_detail_screen.dart. Halaman ini berupa StatelessWidget yang
+                        menyiapkan empat variabel final (title, amount, category, date) sebagai
+                        penampung data, dan sebuah Constructor dengan parameter required agar
+                        data wajib diisi setiap kali halaman ini dibuka dari halaman lain. Data
+                        yang diterima lalu ditampilkan pada UI melalui beberapa widget Text,
+                        dibantu fungsi _buildDetailRow() agar baris Kategori, Tanggal, dan Status
+                        tidak perlu ditulis berulang.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/laprak41.png" alt="Gambar 1. Kode TransactionDetailScreen">
+                        <figcaption>Gambar 1. Kode lengkap TransactionDetailScreen — menerima data lewat constructor dan menampilkannya pada UI</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Tombol Tambah Transaksi (FloatingActionButton)
+                    </div>
+                    <p>
+                        Pada DashboardScreen, FloatingActionButton yang sudah ada sejak
+                        Praktikum 3 tetap dipertahankan untuk membuka AddTransactionScreen lewat
+                        Navigator.push. Hanya saja, tema warnanya kini disesuaikan menjadi merah
+                        (Colors.red) mengikuti tema Modul 4, dan judul aplikasi diperbarui menjadi
+                        "Expense Tracker - Modul 4".
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/laprak42.png" alt="Gambar 2. Kode MyApp dan DashboardScreen dengan FloatingActionButton">
+                        <figcaption>Gambar 2. Kode MyApp dan DashboardScreen pada main.dart, lengkap dengan FloatingActionButton menuju AddTransactionScreen</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Pindah ke Detail &amp; Mengirim Data (Push)
+                    </div>
+                    <p>
+                        Pada setiap ListTile di daftar "Transaksi Terakhir", ditambahkan fungsi
+                        onTap yang memanggil Navigator.push dengan MaterialPageRoute menuju
+                        TransactionDetailScreen. Karena daftar transaksi pada proyek ini disimpan
+                        dalam satu list (_daftarTransaksi) dan ditampilkan lewat perulangan for,
+                        data title, amount, category, dan date yang dikirim lewat constructor
+                        diambil langsung dari data baris yang ditekan (_daftarTransaksi[i]),
+                        sehingga satu blok kode onTap ini otomatis berlaku untuk seluruh transaksi
+                        di daftar, tanpa perlu menuliskan Navigator.push berulang kali untuk
+                        setiap item.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/laprak43.png" alt="Gambar 3. Kode Navigator.push dengan passing data pada RecentTransactionsWidget">
+                        <figcaption>Gambar 3. Navigator.push dengan passing data (title, amount, category, date) dari setiap ListTile menuju TransactionDetailScreen</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">4</span>
+                        Menutup Layar / Kembali Otomatis (Pop)
+                    </div>
+                    <p>
+                        Pada file add_transaction_screen.dart, tombol Simpan Transaksi yang
+                        sebelumnya hanya menampilkan SnackBar sukses kini ditambahkan satu baris
+                        kode lagi: Navigator.pop(context). Baris ini dipanggil tepat setelah
+                        validasi berhasil dan SnackBar ditampilkan, sehingga form otomatis
+                        tertutup dan aplikasi kembali ke halaman Dashboard setelah transaksi
+                        berhasil disimpan — form tidak perlu lagi ditutup secara manual oleh
+                        pengguna.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/laprak44.png" alt="Gambar 4. Kode tombol Simpan Transaksi dengan Navigator.pop">
+                        <figcaption>Gambar 4. Tombol Simpan Transaksi — setelah validasi berhasil, Navigator.pop(context) menutup form dan kembali ke Dashboard</figcaption>
+                    </figure>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">5</span>
+                        Hasil Pengujian
+                    </div>
+                    <p>
+                        Setelah dijalankan, daftar transaksi pada Dashboard kini bisa ditekan dan
+                        akan membuka halaman Detail Transaksi. Terlihat tombol "Panah Kiri"
+                        otomatis muncul di AppBar berkat Navigator.push, lalu judul transaksi
+                        ("Makan Siang"), nominal ("- Rp 50.000"), kategori ("Makanan"), dan
+                        tanggal ("13 September 2026") yang ditampilkan menyesuaikan dengan baris
+                        yang ditekan di Dashboard, membuktikan data berhasil dikirim lewat
+                        constructor dari halaman sebelumnya.
+                    </p>
+
+                    <figure class="screenshot">
+                        <img src="./images/laprak45.png" alt="Gambar 5. Hasil halaman Detail Transaksi">
+                        <figcaption>Gambar 5. Tampilan hasil halaman Detail Transaksi untuk transaksi "Makan Siang"</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <!-- 4. PEMBAHASAN -->
+            <div class="content-card" id="pembahasan">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Pembahasan
+                </div>
+                <p>
+                    Dari hasil pengujian, konsep tumpukan (stack) pada Navigator terbukti
+                    bekerja sesuai teori: setiap kali Navigator.push dipanggil, halaman baru
+                    diletakkan di atas tumpukan dan otomatis menampilkan tombol kembali pada
+                    AppBar, sedangkan Navigator.pop menghapus halaman teratas dan mengembalikan
+                    tampilan ke halaman sebelumnya tanpa perlu membangun ulang Dashboard dari
+                    awal.
+                </p>
+                <p>
+                    Penerapan passing data lewat Constructor juga berjalan dengan baik.
+                    Karena TransactionDetailScreen mewajibkan keempat parameternya
+                    (required), Flutter akan langsung menampilkan error saat proses development
+                    apabila ada data yang lupa dikirim, sehingga kesalahan dapat terdeteksi
+                    lebih awal sebelum aplikasi dijalankan. Pendekatan mengirim data langsung
+                    dari item _daftarTransaksi[i] di dalam perulangan for juga membuat kode
+                    lebih ringkas dibanding menuliskan Navigator.push secara manual untuk setiap
+                    transaksi satu per satu seperti pada contoh di modul.
+                </p>
+                <p>
+                    Penambahan Navigator.pop(context) pada tombol Simpan Transaksi melengkapi
+                    alur navigasi menjadi satu siklus penuh: dari Dashboard menuju form tambah
+                    transaksi (push), lalu kembali lagi ke Dashboard setelah data tersimpan
+                    (pop). Dengan begitu, pengalaman pengguna terasa lebih natural karena tidak
+                    perlu menutup form secara manual.
+                </p>
+            </div>
+
+            <!-- 5. KESIMPULAN -->
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">5</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p class="mb-0">
+                        Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa
+                        Navigator pada Flutter mengatur perpindahan antar halaman layaknya
+                        tumpukan kartu, di mana Navigator.push digunakan untuk membuka halaman
+                        baru dan Navigator.pop untuk kembali ke halaman sebelumnya. Pengiriman
+                        data antar halaman dapat dilakukan dengan menyiapkan variabel final dan
+                        Constructor dengan parameter required pada halaman tujuan, seperti yang
+                        diterapkan pada TransactionDetailScreen untuk menerima title, amount,
+                        category, dan date dari Dashboard. Dengan menggabungkan Navigator.push,
+                        Navigator.pop, dan passing data lewat Constructor, berhasil dibangun alur
+                        navigasi yang lengkap pada aplikasi Expense Tracker — mulai dari menambah
+                        transaksi baru, melihat detail tiap transaksi, hingga kembali otomatis ke
+                        Dashboard setelah data tersimpan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">← Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
