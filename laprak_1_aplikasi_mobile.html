@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 1 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+            white-space: pre;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Aplikasi Mobile</div>
+        <h1>Laporan Praktikum 1<br>Input Widgets &amp; Basic Form (TextField, TextFormField, Validasi)</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2025/2026
+        </p>
+        <p class="meta-info">
+            Dosen Pengampu: Nurfiah, S.ST., M.Kom
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#langkah"><span class="toc-num">3.</span> Langkah-Langkah Praktikum</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">4.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <!-- 1. PENDAHULUAN -->
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Setelah sebelumnya mempelajari widget dasar seperti Text, Container, Row, dan Column,
+                    praktikum kali ini masuk ke bagian yang lebih interaktif, yaitu form inputan. Pada dunia
+                    aplikasi mobile, hampir semua aplikasi memiliki form, entah itu form login, form
+                    pencarian, atau form pendaftaran. Karena itu penting untuk memahami cara Flutter
+                    menangani inputan dari keyboard, mulai dari widget paling sederhana (TextField) sampai
+                    widget yang sudah bisa melakukan validasi otomatis (TextFormField).
+                </p>
+                <p>
+                    Perbedaan mendasar antara TextField dan TextFormField terletak pada validasi. TextField
+                    hanya menangkap teks yang diketik pengguna, sedangkan TextFormField sudah terhubung dengan
+                    sistem Form dan dapat diberi aturan validasi lewat parameter <code>validator</code>.
+                    Supaya validasi dari beberapa TextFormField bisa dicek sekaligus, dibutuhkan
+                    <code>GlobalKey&lt;FormState&gt;</code> yang dipasang ke widget Form, lalu dipanggil lewat
+                    <code>_formKey.currentState!.validate()</code> saat tombol submit ditekan.
+                </p>
+            </div>
+
+            <!-- 2. TUJUAN -->
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <p>Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:</p>
+                <ul>
+                    <li>Membuat form inputan sederhana menggunakan widget TextField.</li>
+                    <li>Membuat form inputan yang sudah dilengkapi validasi menggunakan TextFormField, GlobalKey, dan FormState.</li>
+                    <li>Mengambil nilai inputan dari pengguna memakai TextEditingController dan menampilkannya lewat SnackBar.</li>
+                    <li>Menerapkan konsep di atas untuk membuat form registrasi dengan banyak field sekaligus (tugas Kelas B).</li>
+                </ul>
+            </div>
+
+            <!-- 3. LANGKAH-LANGKAH -->
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Langkah-Langkah Praktikum
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Latihan 1 — Basic Form dengan TextField
+                    </div>
+                    <p>
+                        Langkah pertama, dibuat file baru bernama <code>form_textfield.dart</code>
+                        di dalam folder <code>lib</code>. File ini berisi satu StatefulWidget bernama
+                        <code>MyForm</code> yang memiliki satu TextField untuk input nama dan satu
+                        ElevatedButton untuk menampilkan hasil inputan lewat SnackBar.
+                    </p>
+                    <div class="code-block">import 'package:flutter/material.dart';
+
+void main() =&gt; runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Basic Form')),
+        body: const MyForm(),
+      ),
+    );
+  }
+}
+
+class MyForm extends StatefulWidget {
+  const MyForm({super.key});
+
+  @override
+  State&lt;MyForm&gt; createState() =&gt; _MyFormState();
+}
+
+class _MyFormState extends State&lt;MyForm&gt; {
+  TextEditingController _textEditingController = TextEditingController();
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Masukkan nama anda :'),
+          const SizedBox(height: 10),
+          TextField(
+            decoration: const InputDecoration(
+              labelText: 'Nama Lengkap',
+              hintText: 'Misalnya masnoer',
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.person),
+            ),
+            controller: _textEditingController,
+            keyboardType: TextInputType.text,
+            onChanged: (text) {
+              print('Sedang mengetik teks : $text');
+            },
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              String inputText = _textEditingController.text;
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Nama anda adalah $inputText')),
+              );
+            },
+            child: const Text('Tampilkan nama'),
+          ),
+        ],
+      ),
+    );
+  }
+}</div>
+                    <p>
+                        Karena project sudah memiliki beberapa file dart, menjalankan file ini tidak bisa
+                        langsung menekan Run biasa, melainkan harus menentukan target file secara spesifik
+                        lewat terminal dengan perintah berikut, supaya Flutter tahu file mana yang dijalankan
+                        sebagai entry point.
+                    </p>
+                    <div class="code-block"><span class="cmd">$</span> flutter run -t lib/form_textfield.dart -d chrome</div>
+                    <p class="sub-heading">Hasilnya:</p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak11.png" alt="Gambar 1. Proses menjalankan form_textfield.dart, Flutter sedang menunggu koneksi ke Chrome.">
+                        <figcaption>Gambar 1. Proses menjalankan form_textfield.dart, Flutter sedang menunggu koneksi ke Chrome.</figcaption>
+                    </figure>
+                    <p class="mt-3">
+                        Setelah aplikasi terbuka di Chrome, kolom Nama Lengkap diisi dan tombol
+                        "Tampilkan nama" ditekan. Hasilnya, teks yang diketik langsung muncul di SnackBar
+                        pada bagian bawah layar, menandakan TextEditingController berhasil mengambil nilai
+                        inputan dengan benar.
+                    </p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak12.png" alt="Gambar 2. Hasil form_textfield setelah nama diisi dan tombol ditekan, SnackBar menampilkan nama yang diinput.">
+                        <figcaption>Gambar 2. Hasil form_textfield setelah nama diisi dan tombol ditekan, SnackBar menampilkan nama yang diinput.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Latihan 2 — Basic Form dengan TextFormField dan Validasi
+                    </div>
+                    <p>
+                        Selanjutnya dibuat file <code>form_textformfield.dart</code>. Bedanya dengan latihan
+                        sebelumnya, form ini memiliki dua TextFormField (Nama dan Email) yang dibungkus widget
+                        Form dan diberi validator masing-masing. Validator email juga mengecek apakah input
+                        mengandung karakter <code>@</code>; jika tidak, maka dianggap tidak valid.
+                    </p>
+                    <div class="code-block">class _MyFormTextState extends State&lt;MyFormText&gt; {
+  final _formKey = GlobalKey&lt;FormState&gt;();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      String name = _nameController.text;
+      String email = _emailController.text;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Validasi $name, $email Berhasil')));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(children: [
+          TextFormField(
+            controller: _nameController,
+            decoration: const InputDecoration(labelText: 'Nama : '),
+            validator: (value) =&gt; (value == null || value.isEmpty)
+                ? 'Masukkan nama anda' : null,
+          ),
+          TextFormField(
+            controller: _emailController,
+            decoration: const InputDecoration(labelText: 'Email : '),
+            validator: (value) {
+              if (value == null || value.isEmpty) return 'Masukkan email anda';
+              if (!value.contains('@')) return 'Email tidak valid';
+              return null;
+            },
+          ),
+          ElevatedButton(onPressed: _submitForm, child: const Text('Submit')),
+        ]),
+      ),
+    );
+  }
+}</div>
+                    <p class="sub-heading">Hasilnya:</p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak13.png" alt="Gambar 3. Tampilan awal form_textformfield sebelum diisi, terdiri dari kolom Nama dan Email.">
+                        <figcaption>Gambar 3. Tampilan awal form_textformfield sebelum diisi, terdiri dari kolom Nama dan Email.</figcaption>
+                    </figure>
+                    <figure class="screenshot">
+                        <img src="./images/laprak14.png" alt="Gambar 4. Proses build ulang dan menjalankan form_textformfield.dart lewat terminal.">
+                        <figcaption>Gambar 4. Proses build ulang dan menjalankan form_textformfield.dart lewat terminal.</figcaption>
+                    </figure>
+                    <p class="mt-3">
+                        Kolom Nama dan Email kemudian diisi dengan data yang valid, lalu tombol Submit
+                        ditekan. Karena validator tidak menemukan kesalahan (value tidak kosong dan email
+                        mengandung '@'), method <code>_formKey.currentState!.validate()</code> mengembalikan
+                        nilai <code>true</code> sehingga <code>_submitForm()</code> lanjut menampilkan SnackBar
+                        berisi data yang berhasil divalidasi.
+                    </p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak15.png" alt="Gambar 5. Struktur kode form_textformfield.dart dengan GlobalKey dan FormState.">
+                        <figcaption>Gambar 5. Struktur kode form_textformfield.dart dengan GlobalKey dan FormState.</figcaption>
+                    </figure>
+                    <figure class="screenshot">
+                        <img src="./images/laprak16.png" alt="Gambar 6. Form berhasil divalidasi, SnackBar menampilkan nama dan email yang diinput.">
+                        <figcaption>Gambar 6. Form berhasil divalidasi, SnackBar menampilkan nama dan email yang diinput.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Tugas Kelas B — Form Registrasi Pengguna
+                    </div>
+                    <p>
+                        Tugas untuk Kelas B adalah membuat form registrasi dengan 4 input (Nama, Email,
+                        Password, dan Confirm Password) yang dipisah menjadi dua file, yaitu
+                        <code>user_registration_form.dart</code> untuk tampilan form dan
+                        <code>main_registration.dart</code> sebagai entry point yang memanggil widget tersebut.
+                    </p>
+                    <p>
+                        Pada <code>user_registration_form.dart</code> dibuat StatefulWidget
+                        <code>UserRegistrationForm</code> dengan 4 buah TextEditingController dan validator
+                        masing-masing: Nama tidak boleh kosong, Email harus mengandung '@', Password minimal
+                        6 karakter, dan Confirm Password harus sama persis dengan Password yang diketik
+                        sebelumnya.
+                    </p>
+                    <div class="code-block">class _UserRegistrationFormState extends State&lt;UserRegistrationForm&gt; {
+  final _formKey = GlobalKey&lt;FormState&gt;();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      String name = _nameController.text;
+      String email = _emailController.text;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Registrasi $name ($email) berhasil!')));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Form Registrasi Pengguna')),
+      body: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(children: [
+            TextFormField(
+              controller: _nameController,
+              decoration: const InputDecoration(labelText: 'Nama : '),
+              validator: (v) =&gt; (v == null || v.isEmpty) ? 'Masukkan nama anda' : null),
+            TextFormField(
+              controller: _emailController,
+              decoration: const InputDecoration(labelText: 'Email : '),
+              validator: (v) {
+                if (v == null || v.isEmpty) return 'Masukkan email anda';
+                if (!v.contains('@')) return 'Email tidak valid';
+                return null;
+              }),
+            TextFormField(
+              controller: _passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(labelText: 'Password : '),
+              validator: (v) {
+                if (v == null || v.isEmpty) return 'Masukkan password anda';
+                if (v.length &lt; 6) return 'Password minimal 6 karakter';
+                return null;
+              }),
+            TextFormField(
+              controller: _confirmPasswordController,
+              obscureText: true,
+              decoration: const InputDecoration(labelText: 'Confirm Password : '),
+              validator: (v) {
+                if (v == null || v.isEmpty) return 'Masukkan ulang password anda';
+                if (v != _passwordController.text) return 'Password tidak sama';
+                return null;
+              }),
+            ElevatedButton(onPressed: _submitForm, child: const Text('Submit')),
+          ]),
+        ),
+      ),
+    );
+  }
+}</div>
+                    <figure class="screenshot">
+                        <img src="./images/laprak17.png" alt="Gambar 7. Isi main_registration.dart yang memanggil UserRegistrationForm sebagai halaman utama.">
+                        <figcaption>Gambar 7. Isi main_registration.dart yang memanggil UserRegistrationForm sebagai halaman utama.</figcaption>
+                    </figure>
+                    <figure class="screenshot">
+                        <img src="./images/laprak18.png" alt="Gambar 8. Struktur kode user_registration_form.dart dengan 4 controller dan validator masing-masing field.">
+                        <figcaption>Gambar 8. Struktur kode user_registration_form.dart dengan 4 controller dan validator masing-masing field.</figcaption>
+                    </figure>
+                    <p class="mt-3">File dijalankan dengan perintah berikut:</p>
+                    <div class="code-block"><span class="cmd">$</span> flutter run -t lib/main_registration.dart -d chrome</div>
+                    <p class="sub-heading">Hasilnya:</p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak19.png" alt="Gambar 9. Proses menjalankan main_registration.dart, sempat berpindah dari sesi form_textformfield sebelumnya.">
+                        <figcaption>Gambar 9. Proses menjalankan main_registration.dart, sempat berpindah dari sesi form_textformfield sebelumnya.</figcaption>
+                    </figure>
+                    <p class="mt-3">
+                        Tampilan awal form menunjukkan 4 kolom kosong yaitu Nama, Email, Password, dan
+                        Confirm Password, ditambah satu tombol Submit di bagian bawah.
+                    </p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak110.png" alt="Gambar 10. Tampilan awal Form Registrasi Pengguna sebelum data diisi.">
+                        <figcaption>Gambar 10. Tampilan awal Form Registrasi Pengguna sebelum data diisi.</figcaption>
+                    </figure>
+                    <p class="mt-3">
+                        Setelah keempat kolom diisi dengan data yang sesuai aturan validasi (nama tidak
+                        kosong, email mengandung '@', password minimal 6 karakter, dan confirm password sama
+                        dengan password), tombol Submit ditekan. Karena seluruh validator mengembalikan nilai
+                        <code>null</code> (artinya tidak ada error), <code>_submitForm()</code> berhasil
+                        dijalankan dan menampilkan SnackBar konfirmasi registrasi berhasil.
+                    </p>
+                    <figure class="screenshot">
+                        <img src="./images/laprak111.png" alt="Gambar 11. Form Registrasi Pengguna terisi lengkap, SnackBar menampilkan pesan registrasi berhasil.">
+                        <figcaption>Gambar 11. Form Registrasi Pengguna terisi lengkap, SnackBar menampilkan pesan registrasi berhasil.</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <!-- 4. KESIMPULAN -->
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p>
+                        Dari praktikum ini dapat dilihat bahwa TextField dan TextFormField sebenarnya mirip,
+                        tetapi berbeda kegunaan. TextField cukup untuk inputan yang sederhana dan tidak perlu
+                        dicek, sedangkan TextFormField lebih tepat dipakai ketika inputan harus divalidasi
+                        terlebih dahulu sebelum datanya diproses lebih jauh, seperti pada Latihan 2 dan tugas
+                        Kelas B. Validasi sebanyak apa pun fieldnya menjadi lebih mudah ditangani berkat
+                        <code>GlobalKey&lt;FormState&gt;</code> yang dipasang ke widget Form, karena cukup
+                        memanggil <code>_formKey.currentState!.validate()</code> sekali saja untuk mengecek
+                        semua field sekaligus, dibandingkan harus mengecek satu per satu secara manual yang
+                        lebih rumit dan rawan salah.
+                    </p>
+                    <p class="mb-0">
+                        Selain itu, TextEditingController juga menjadi bagian yang tidak kalah penting, karena
+                        lewat controller ini nilai yang diketik pengguna bisa diambil, baik hanya untuk
+                        ditampilkan langsung seperti pada Latihan 1 maupun untuk diolah dulu sebelum
+                        ditampilkan seperti pada form registrasi Kelas B. Konsep validasi dua field pada
+                        Latihan 2 juga dapat dikembangkan menjadi lebih kompleks, contohnya pada form registrasi
+                        yang memiliki empat field sekaligus dengan validasi antarfield, yaitu password dan
+                        confirm password yang harus sama persis. Satu hal lagi yang baru disadari selama
+                        praktikum: karena dalam satu project terdapat banyak file dart untuk latihan yang
+                        berbeda, menjalankan file tertentu tidak bisa asal klik Run, melainkan harus disebutkan
+                        targetnya lewat perintah <code>flutter run -t &lt;nama_file&gt; -d chrome</code> supaya
+                        Flutter tidak salah menjalankan <code>main.dart</code> bawaan project.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">← Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
