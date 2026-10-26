@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum 5 - Portofolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .laprak-hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 120px 0 60px;
+            color: white;
+        }
+
+        .laprak-hero .badge-subject {
+            background-color: #f4a6c1;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .laprak-hero h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .laprak-hero .meta-info {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 28px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #f4a6c1;
+            color: #000;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f4a6c1;
+        }
+
+        .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+            line-height: 1.85;
+            color: #444;
+            font-size: 0.97rem;
+        }
+
+        .step-box {
+            border-left: 3px solid #f4a6c1;
+            padding: 16px 20px;
+            background: #fff9fb;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-number-badge {
+            background: #f4a6c1;
+            color: #000;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 14px;
+        }
+
+        .code-block .cmd {
+            color: #a6e3a1;
+        }
+
+        .code-block .comment {
+            color: #6c7086;
+        }
+
+        figure.screenshot {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 14px 0 4px;
+            text-align: center;
+        }
+
+        figure.screenshot img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background: #fff0f5;
+            border: 1px solid #f4a6c1;
+            color: #c0547a;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 2px;
+        }
+
+        .mvc-card {
+            border: 1px solid #ffe0ec;
+            border-radius: 10px;
+            padding: 18px 20px;
+            background: #fff9fb;
+            margin-bottom: 14px;
+        }
+
+        .mvc-card .mvc-label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #c0547a;
+            margin-bottom: 6px;
+        }
+
+        .mvc-card code {
+            background: #fce4ec;
+            color: #880e4f;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff0f5, #fff);
+            border: 1px solid #f4a6c1;
+            border-radius: 10px;
+            padding: 22px 26px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: #f4a6c1;
+        }
+
+        .toc-list .toc-num {
+            color: #f4a6c1;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .back-btn {
+            background-color: #f4a6c1;
+            border-color: #f4a6c1;
+            color: #000;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 8px 22px;
+        }
+
+        .back-btn:hover {
+            background-color: #e68fb0;
+            border-color: #e68fb0;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 24px 20px;
+            }
+            .laprak-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* ---- tambahan khusus laprak 5 ---- */
+        figure.screenshot.tall img {
+            max-width: 460px;
+        }
+
+        figure.screenshot.phone {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        figure.screenshot.phone img {
+            max-width: 240px;
+        }
+
+        .test-table th {
+            background-color: #fff0f5;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+        }
+
+        .test-table td {
+            font-size: 0.92rem;
+            color: #444;
+        }
+
+        .content-card a {
+            color: #c0547a;
+            word-break: break-all;
+        }
+
+        .content-card a:hover {
+            color: #880e4f;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-semibold" href="index.html">
+            <img src="images/logo.jpeg" alt="Logo" width="32" height="32" class="me-2 rounded">
+            Portfolio
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active fw-medium" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="laprak-hero">
+    <div class="container">
+        <a href="portfolio.html" class="text-decoration-none text-light opacity-75 d-inline-flex align-items-center gap-2 mb-3" style="font-size:0.88rem;">
+            ← Kembali ke Portfolio
+        </a>
+        <div class="badge-subject">Praktikum Aplikasi Mobile</div>
+        <h1>Laporan Praktikum 5<br>Arsitektur Navigasi, Named Routes, Bottom Navigation Bar, SQLite, serta Login dan Register</h1>
+        <p class="meta-info">
+            Sasya Zamora &nbsp;·&nbsp; 2411533014 &nbsp;·&nbsp; Informatika – Universitas Andalas &nbsp;·&nbsp; 2026
+        </p>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container py-5">
+    <div class="row g-4">
+
+        <!-- TABLE OF CONTENTS (sidebar) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="content-card sticky-top" style="top: 90px;">
+                <h6 class="fw-bold mb-3" style="color:#c0547a;">Daftar Isi</h6>
+                <ul class="toc-list">
+                    <li><a href="#pendahuluan"><span class="toc-num">1.</span> Pendahuluan</a></li>
+                    <li><a href="#tujuan"><span class="toc-num">2.</span> Tujuan Praktikum</a></li>
+                    <li><a href="#langkah"><span class="toc-num">3.</span> Langkah Praktikum</a></li>
+                    <li><a href="#latihan"><span class="toc-num">4.</span> Latihan / Tugas</a></li>
+                    <li><a href="#akhir"><span class="toc-num">5.</span> Pengembangan Akhir</a></li>
+                    <li><a href="#pembahasan"><span class="toc-num">6.</span> Pembahasan</a></li>
+                    <li><a href="#kesimpulan"><span class="toc-num">7.</span> Kesimpulan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="col-lg-9">
+
+            <div class="content-card" id="pendahuluan">
+                <div class="section-heading">
+                    <span class="section-number">1</span> Pendahuluan
+                </div>
+                <p>
+                    Aplikasi mobile yang memiliki banyak halaman membutuhkan arsitektur navigasi yang rapi
+                    agar kode mudah dibaca dan dipelihara. Jika perpindahan halaman ditulis langsung memakai
+                    <code>Navigator.push</code> di banyak tempat, kode akan menjadi berantakan
+                    (<em>spaghetti code</em>) dan sulit dikelola ketika jumlah layar bertambah.
+                </p>
+                <p>
+                    Pada Praktikum V ini dipelajari dua konsep utama. Pertama, <strong>Named Routes</strong>,
+                    yaitu pemberian nama berupa string untuk setiap halaman yang didaftarkan terpusat di
+                    <code>MaterialApp</code>, sehingga perpindahan halaman cukup memanggil
+                    <code>Navigator.pushNamed</code>. Kedua, <strong>BottomNavigationBar</strong>, yaitu menu
+                    navigasi di bagian bawah layar yang mengganti tampilan utama (body) tanpa berpindah
+                    Scaffold, seperti pada aplikasi modern.
+                </p>
+                <p>
+                    Hasil praktikum ini adalah aplikasi <strong>Expense Tracker</strong> (pencatat keuangan)
+                    yang menggabungkan halaman Beranda (Dashboard), Riwayat, dan Profil dalam satu wadah
+                    bertab, ditambah halaman Login.
+                </p>
+                <p>
+                    Pada tahap akhir, seluruh hasil Praktikum 1 sampai 5 digabungkan menjadi satu project.
+                    Data pengguna dan data transaksi yang sebelumnya hanya tersimpan di memori kini disimpan
+                    secara permanen pada database lokal <strong>SQLite</strong>, sehingga tidak hilang ketika
+                    aplikasi ditutup. Aplikasi juga dilengkapi form register dan login, di mana pengguna dapat
+                    mendaftar dan masuk menggunakan akun yang tersimpan di database. Desain UI/UX halaman lain
+                    dipertahankan, dan perubahan tampilan hanya dilakukan pada halaman login dan register.
+                    Hasil akhir aplikasi dibuat menjadi file APK agar dapat dipasang pada perangkat Android.
+                </p>
+            </div>
+
+            <div class="content-card" id="tujuan">
+                <div class="section-heading">
+                    <span class="section-number">2</span> Tujuan Praktikum
+                </div>
+                <p>Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:</p>
+                <ul>
+                    <li>Menerapkan Named Routes untuk navigasi yang terpusat dan rapi.</li>
+                    <li>Membangun menu bawah (BottomNavigationBar) seperti aplikasi modern.</li>
+                    <li>Mengintegrasikan halaman Dashboard, Riwayat, dan Profil dalam satu wadah.</li>
+                    <li>Menyimpan data pengguna dan transaksi secara permanen menggunakan database lokal SQLite.</li>
+                    <li>Membuat fitur register dan login dengan data akun yang tersimpan pada database lokal.</li>
+                    <li>Menghasilkan file APK sebagai hasil akhir aplikasi.</li>
+                </ul>
+            </div>
+
+            <div class="content-card" id="langkah">
+                <div class="section-heading">
+                    <span class="section-number">3</span> Langkah-Langkah Praktikum
+                </div>
+                <div class="sub-heading">3.1 Alat dan Bahan</div>
+                <ul>
+                    <li><strong>Flutter SDK</strong></li>
+                    <li><strong>Visual Studio Code</strong></li>
+                    <li><strong>Emulator / perangkat / browser</strong> (Chrome atau Edge)</li>
+                    <li><strong>Perangkat Android dan kabel USB</strong> (untuk menjalankan dan menguji aplikasi)</li>
+                    <li><strong>Git dan GitHub</strong> (untuk repository kode sumber)</li>
+                </ul>
+
+                <div class="sub-heading mt-4 mb-3">3.2 Langkah Pengerjaan</div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">1</span>
+                        Mendaftarkan Named Routes
+                    </div>
+                    <p>
+                        Parameter <code>home</code> pada <code>MaterialApp</code> dihapus, lalu diganti dengan
+                        <code>initialRoute</code> dan <code>routes</code>. Rute <code>'/'</code> diarahkan ke
+                        <code>MainScreen</code> (layar bertab) dan rute <code>'/add'</code> diarahkan ke
+                        <code>AddTransactionScreen</code>.
+                    </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob51.png" alt="Gambar 1. Kode main.dart dengan Named Routes">
+                        <figcaption>Gambar 1. Kode main.dart dengan Named Routes</figcaption>
+                    </figure>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">2</span>
+                        Membuat Penampung Tab
+                    </div>
+                    <p>
+                        File <code>main_screen.dart</code> dibuat sebagai <code>StatefulWidget</code> karena tab
+                        yang aktif selalu berubah. Disiapkan variabel <code>_selectedIndex</code> untuk menyimpan
+                        tab aktif, daftar widget <code>_pages</code> yang akan ditukar, dan fungsi
+                        <code>_onItemTapped</code> yang memanggil <code>setState</code>.
+                    </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob52.png" alt="Gambar 2. Kode state dan daftar halaman pada MainScreen">
+                        <figcaption>Gambar 2. Kode state dan daftar halaman pada MainScreen</figcaption>
+                    </figure>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">3</span>
+                        Merangkai BottomNavigationBar
+                    </div>
+                    <p>
+                        Method <code>build</code> pada <code>MainScreen</code> dilengkapi dengan
+                        <code>Scaffold</code> yang <code>body</code>-nya menampilkan
+                        <code>_pages[_selectedIndex]</code> dan <code>bottomNavigationBar</code> berisi tiga item:
+                        Beranda, Riwayat, dan Profil.
+                    </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob53.png" alt="Gambar 3. Kode method build pada MainScreen">
+                        <figcaption>Gambar 3. Kode method build pada MainScreen</figcaption>
+                    </figure>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">4</span>
+                        Memperbarui dashboard_screen.dart
+                    </div>
+                    <p>
+                        Pada tombol mengambang (<code>FloatingActionButton</code>), logika
+                        <code>Navigator.push(...MaterialPageRoute...)</code> diganti dengan
+                        <code>Navigator.pushNamed(context, '/add')</code> agar memakai rute yang sudah
+                        didaftarkan di <code>main.dart</code>. Hal yang sama diterapkan pada tombol aksi
+                        (Pemasukan, Pengeluaran, Transfer).
+                    </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob54.png" alt="Gambar 4. Kode FloatingActionButton dengan Named Route">
+                        <figcaption>Gambar 4. Kode FloatingActionButton dengan Named Route</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob55.png" alt="Gambar 5. Kode tombol aksi dengan Named Route">
+                        <figcaption>Gambar 5. Kode tombol aksi dengan Named Route</figcaption>
+                    </figure>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-title">
+                        <span class="step-number-badge">5</span>
+                        Hasil Akhir Aplikasi
+                    </div>
+                    <p>
+                        Aplikasi dijalankan dengan perintah <code>flutter run</code>. Tampilan akhir menunjukkan
+                        tiga tab pada menu bawah yang dapat berpindah tanpa mengganti Scaffold, serta tombol
+                        Catat Transaksi yang membuka halaman tambah transaksi melalui rute <code>'/add'</code>.
+                    </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob56.png" alt="Gambar 6. Tampilan halaman Beranda">
+                        <figcaption>Gambar 6. Tampilan halaman Beranda</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob57.png" alt="Gambar 7. Tampilan halaman tambah transaksi">
+                        <figcaption>Gambar 7. Tampilan halaman tambah transaksi</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <div class="content-card" id="latihan">
+                <div class="section-heading">
+                    <span class="section-number">4</span> Latihan / Tugas
+                </div>
+                <div class="sub-heading">4.1 Halaman Riwayat Transaksi</div>
+                <p>
+                    Halaman riwayat dibuat pada file <code>history_screen.dart</code>. Halaman ini menampilkan
+                    seluruh data <code>daftarTransaksi</code> dalam bentuk <code>ListView</code> dan menampilkan
+                    pesan khusus bila data kosong. Saat salah satu transaksi ditekan, aplikasi membuka halaman
+                    detail transaksi dengan membawa data (<em>passing data</em>).
+                </p>
+                    <figure class="screenshot tall">
+                        <img src="./images/laprakappmob58.png" alt="Gambar 8. Model TransaksiItem dan data transaksi">
+                        <figcaption>Gambar 8. Model TransaksiItem dan data transaksi</figcaption>
+                    </figure>
+                    <figure class="screenshot tall">
+                        <img src="./images/laprakappmob59.png" alt="Gambar 9. Kode halaman Riwayat Transaksi">
+                        <figcaption>Gambar 9. Kode halaman Riwayat Transaksi</figcaption>
+                    </figure>
+                    <figure class="screenshot tall">
+                        <img src="./images/laprakappmob510.png" alt="Gambar 10. Kode halaman Detail Transaksi">
+                        <figcaption>Gambar 10. Kode halaman Detail Transaksi</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob511.png" alt="Gambar 11. Tampilan halaman Riwayat">
+                        <figcaption>Gambar 11. Tampilan halaman Riwayat</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob512.png" alt="Gambar 12. Tampilan halaman Detail Transaksi">
+                        <figcaption>Gambar 12. Tampilan halaman Detail Transaksi</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">4.2 Halaman Profil</div>
+                <p>
+                    Halaman profil berisi avatar, nama, email, dan tombol logout. Nama dan email diambil dari
+                    class <code>UserSession</code> yang menyimpan data pengguna yang sedang login. Tombol logout
+                    mengosongkan data sesi lalu kembali ke halaman login.
+                </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob513.png" alt="Gambar 13. Kode UserSession">
+                        <figcaption>Gambar 13. Kode UserSession</figcaption>
+                    </figure>
+                    <figure class="screenshot tall">
+                        <img src="./images/laprakappmob514.png" alt="Gambar 14. Kode halaman Profil">
+                        <figcaption>Gambar 14. Kode halaman Profil</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob515.png" alt="Gambar 15. Tampilan halaman Profil">
+                        <figcaption>Gambar 15. Tampilan halaman Profil</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">4.3 Halaman Login</div>
+                <p>
+                    Halaman login berisi <code>TextField</code> email dan password serta tombol Login. Saat tombol
+                    ditekan, aplikasi memvalidasi input, menyimpan email ke <code>UserSession</code>, lalu
+                    berpindah ke halaman utama menggunakan
+                    <code>Navigator.pushReplacementNamed(context, '/')</code>. Email yang diinput kemudian
+                    ditampilkan pada Dashboard dan Profil.
+                </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob516.png" alt="Gambar 16. Logika proses login">
+                        <figcaption>Gambar 16. Logika proses login</figcaption>
+                    </figure>
+                    <figure class="screenshot tall">
+                        <img src="./images/laprakappmob517.png" alt="Gambar 17. Tampilan kode form login">
+                        <figcaption>Gambar 17. Tampilan kode form login</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob518.png" alt="Gambar 18. Kode main.dart setelah ditambah rute login">
+                        <figcaption>Gambar 18. Kode main.dart setelah ditambah rute login</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob519.png" alt="Gambar 19. Kode GreetingWidget menampilkan data login">
+                        <figcaption>Gambar 19. Kode GreetingWidget menampilkan data login</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob520.png" alt="Gambar 20. Tampilan halaman Login">
+                        <figcaption>Gambar 20. Tampilan halaman Login</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob521.png" alt="Gambar 21. Dashboard menampilkan email pengguna">
+                        <figcaption>Gambar 21. Dashboard menampilkan email pengguna</figcaption>
+                    </figure>
+            </div>
+
+            <div class="content-card" id="akhir">
+                <div class="section-heading">
+                    <span class="section-number">5</span> Pengembangan Akhir: Integrasi SQLite, Register, dan Login
+                </div>
+                <p>
+                    Pada tahap sebelumnya, data transaksi (list <code>daftarTransaksi</code>) dan data pengguna
+                    (class <code>UserSession</code>) hanya tersimpan di memori sehingga hilang saat aplikasi
+                    ditutup. Sesuai ketentuan Tugas Praktikum 5, aplikasi dikembangkan dengan penyimpanan lokal
+                    SQLite serta form login dan register. Berbeda dengan halaman login pada bagian sebelumnya
+                    yang hanya menyimpan email ke <code>UserSession</code>, login pada versi akhir memeriksa data
+                    pengguna ke database.
+                </p>
+
+                <div class="sub-heading mt-4">5.1 Menambahkan Package</div>
+                <p>
+                    Empat package ditambahkan pada bagian <code>dependencies</code> di file
+                    <code>pubspec.yaml</code>, lalu diunduh dengan perintah <code>flutter pub get</code>.
+                    Package <code>sqflite</code> dipakai untuk mengelola database SQLite, <code>path</code> untuk
+                    menyusun lokasi berkas database (fungsi <code>join</code>), <code>crypto</code> untuk membuat
+                    hash password dengan SHA-256, dan <code>shared_preferences</code> adalah package penyimpanan
+                    data sederhana berbentuk key-value.
+                </p>
+                <div class="code-block">
+<span class="cmd">dependencies:</span>
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  sqflite: ^2.4.5
+  path: ^1.9.1
+  shared_preferences: ^2.5.6
+  crypto: ^3.0.7
+                </div>
+                <p class="text-center text-muted fst-italic" style="font-size:0.82rem;">Kode 1. Dependencies pada pubspec.yaml</p>
+
+                <div class="sub-heading mt-4">5.2 Membuat Database SQLite (DatabaseHelper)</div>
+                <p>
+                    File <code>database_helper.dart</code> berisi class <code>DatabaseHelper</code> yang dibuat
+                    dengan pola <em>singleton</em> (konstruktor privat dan satu instance statis) agar seluruh
+                    halaman memakai koneksi database yang sama. Database bernama
+                    <code>expense_tracker.db</code> dibuat di lokasi bawaan perangkat
+                    (<code>getDatabasesPath</code>) saat pertama kali dibuka melalui <code>onCreate</code>.
+                    Terdapat dua tabel. Tabel <code>users</code> berisi <code>id</code>, <code>nama</code>,
+                    <code>email</code> (unik), dan <code>password</code>. Tabel <code>transactions</code> berisi
+                    <code>id</code>, <code>user_id</code>, <code>title</code>, <code>nominal</code>,
+                    <code>kategori</code>, <code>tanggal</code>, dan <code>is_pengeluaran</code>, di mana
+                    <code>user_id</code> adalah <em>foreign key</em> ke tabel <code>users</code> sehingga setiap
+                    transaksi dimiliki oleh satu pengguna.
+                </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob522.png" alt="Kode 2. Pembuatan database dan tabel pada DatabaseHelper">
+                        <figcaption>Kode 2. Pembuatan database dan tabel pada DatabaseHelper</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">5.3 Fitur Register</div>
+                <p>
+                    Password tidak disimpan sebagai teks asli, melainkan diubah menjadi hash SHA-256 melalui
+                    fungsi <code>hashPassword</code>. Fungsi <code>registerUser</code> memasukkan data ke tabel
+                    <code>users</code> dengan email diubah menjadi huruf kecil. Karena kolom email bersifat
+                    <code>UNIQUE</code>, pendaftaran dengan email yang sudah ada menimbulkan
+                    <code>DatabaseException</code> dan fungsi mengembalikan <code>false</code>, sedangkan
+                    pendaftaran yang berhasil mengembalikan <code>true</code>. Halaman register
+                    (<code>register_screen.dart</code>) berisi field Nama, Email, Password, dan Konfirmasi
+                    Password, tombol Daftar, serta tautan "Sudah punya akun? Login" (Gambar 22).
+                </p>
+                    <figure class="screenshot phone">
+                        <img src="./images/laprakappmob523.jpg" alt="Gambar 22. Tampilan halaman Register">
+                        <figcaption>Gambar 22. Tampilan halaman Register</figcaption>
+                    </figure>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob524.png" alt="Kode 3. Fungsi hashPassword dan registerUser">
+                        <figcaption>Kode 3. Fungsi hashPassword dan registerUser</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">5.4 Fitur Login</div>
+                <p>
+                    Fungsi <code>loginUser</code> meng-hash password yang diketik, lalu mencari baris pada tabel
+                    <code>users</code> yang email dan password-nya cocok. Jika ditemukan, fungsi mengembalikan
+                    data pengguna yang dipakai untuk menampilkan nama dan email pada Dashboard dan Profil. Jika
+                    tidak ditemukan, fungsi mengembalikan <code>null</code> dan aplikasi menampilkan pesan
+                    "Email atau password salah" (Gambar 24). Halaman login (Gambar 23) memiliki tautan
+                    "Belum punya akun? Daftar" yang menuju halaman register.
+                </p>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-4 col-sm-6">
+                        <figure class="screenshot phone">
+                            <img src="./images/laprakappmob525.jpg" alt="Gambar 23. Tampilan halaman Login">
+                            <figcaption>Gambar 23. Tampilan halaman Login</figcaption>
+                        </figure>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                        <figure class="screenshot phone">
+                            <img src="./images/laprakappmob526.jpg" alt="Gambar 24. Login dengan data yang salah">
+                            <figcaption>Gambar 24. Login dengan data yang salah</figcaption>
+                        </figure>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                        <figure class="screenshot phone">
+                            <img src="./images/laprakappmob527.jpg" alt="Gambar 25. Dashboard setelah login berhasil">
+                            <figcaption>Gambar 25. Dashboard setelah login berhasil</figcaption>
+                        </figure>
+                        </div>
+                    </div>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob528.png" alt="Kode 4. Fungsi loginUser">
+                        <figcaption>Kode 4. Fungsi loginUser</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">5.5 Rute pada main.dart</div>
+                <p>
+                    Rute baru ditambahkan pada <code>main.dart</code>. Rute <code>/login</code> menjadi halaman
+                    awal melalui <code>initialRoute</code>, <code>/register</code> menuju halaman pendaftaran,
+                    <code>/</code> menuju <code>MainScreen</code> dengan BottomNavigationBar, dan
+                    <code>/add</code> menuju halaman tambah transaksi. Tema merah dari praktikum sebelumnya
+                    dipertahankan.
+                </p>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob529.png" alt="Kode 5. Konfigurasi rute pada main.dart">
+                        <figcaption>Kode 5. Konfigurasi rute pada main.dart</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">5.6 Transaksi Tersimpan di SQLite</div>
+                <p>
+                    Penyimpanan transaksi memakai fungsi <code>insertTransaksi</code>, sedangkan pembacaannya
+                    memakai <code>getTransaksi</code> yang memfilter data berdasarkan <code>user_id</code> dan
+                    mengurutkannya dari yang terbaru (<code>id DESC</code>). Nilai <code>isPengeluaran</code>
+                    disimpan sebagai 1 atau 0 karena SQLite tidak memiliki tipe boolean. Karena data ditulis ke
+                    berkas database di penyimpanan perangkat, transaksi tidak lagi hilang ketika aplikasi
+                    ditutup. Gambar 26 memperlihatkan transaksi "makan malam" sebesar Rp 100.000 pada
+                    25 Oktober 2026 tampil pada Transaksi Terakhir dan saldo utama menjadi -Rp 100.000 karena
+                    belum ada pemasukan. Gambar 27 memperlihatkan akun lain yang belum memiliki transaksi
+                    sehingga saldonya Rp 0, yang menunjukkan data dipisahkan per pengguna.
+                </p>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-5 col-sm-6">
+                        <figure class="screenshot phone">
+                            <img src="./images/laprakappmob530.jpg" alt="Gambar 26. Dashboard setelah transaksi dicatat">
+                            <figcaption>Gambar 26. Dashboard setelah transaksi dicatat</figcaption>
+                        </figure>
+                        </div>
+                        <div class="col-md-5 col-sm-6">
+                        <figure class="screenshot phone">
+                            <img src="./images/laprakappmob531.jpg" alt="Gambar 27. Dashboard akun lain tanpa transaksi">
+                            <figcaption>Gambar 27. Dashboard akun lain tanpa transaksi</figcaption>
+                        </figure>
+                        </div>
+                    </div>
+                    <figure class="screenshot ">
+                        <img src="./images/laprakappmob532.png" alt="Kode 6. Fungsi insertTransaksi dan getTransaksi">
+                        <figcaption>Kode 6. Fungsi insertTransaksi dan getTransaksi</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">5.7 Profil dan Logout</div>
+                <p>
+                    Halaman profil menampilkan avatar, nama, dan email pengguna yang sedang login beserta tombol
+                    Logout (Gambar 28).
+                </p>
+                    <figure class="screenshot phone">
+                        <img src="./images/laprakappmob533.jpg" alt="Gambar 28. Tampilan halaman Profil">
+                        <figcaption>Gambar 28. Tampilan halaman Profil</figcaption>
+                    </figure>
+
+                <div class="sub-heading mt-4">5.8 Pengujian</div>
+                <p>
+                    Pengujian dilakukan dengan menjalankan aplikasi pada perangkat Android yang tersambung melalui
+                    kabel USB. Hasilnya dirangkum pada Tabel 1.
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle test-table">
+                        <thead>
+                            <tr>
+                                <th style="width:60px;">No</th>
+                                <th>Skenario</th>
+                                <th>Hasil</th>
+                                <th style="width:110px;">Bukti</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Login dengan email atau password yang tidak sesuai data di database</td>
+                                <td>Muncul pesan "Email atau password salah"</td>
+                                <td>Gambar 24</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Login dengan akun yang terdaftar</td>
+                                <td>Masuk ke Dashboard dengan nama dan email pengguna</td>
+                                <td>Gambar 25</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Mencatat transaksi pengeluaran "makan malam" Rp 100.000</td>
+                                <td>Transaksi tampil pada Transaksi Terakhir dan saldo menjadi -Rp 100.000</td>
+                                <td>Gambar 26</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Login dengan akun lain yang belum memiliki transaksi</td>
+                                <td>Saldo Rp 0 dan transaksi akun pertama tidak ditampilkan</td>
+                                <td>Gambar 27</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-center text-muted fst-italic" style="font-size:0.82rem;">Tabel 1. Hasil pengujian aplikasi</p>
+
+                <div class="sub-heading mt-4">5.9 Generate File APK</div>
+                <p>
+                    Setelah fitur selesai, aplikasi dibuat dalam mode release dengan perintah berikut yang
+                    dijalankan di terminal pada folder project.
+                </p>
+                <div class="code-block">
+<span class="cmd">flutter build apk --release</span>
+                </div>
+                <p class="text-center text-muted fst-italic" style="font-size:0.82rem;">Kode 7. Perintah build APK</p>
+                <p>
+                    Proses Gradle (<code>assembleRelease</code>) selesai dalam sekitar 328,9 detik dan
+                    menghasilkan file <code>app-release.apk</code> berukuran 48,9 MB pada folder
+                    <code>build\app\outputs\flutter-apk</code>. Pesan bahwa font
+                    <code>MaterialIcons-Regular.otf</code> di-<em>tree-shake</em> (dari 1.645.184 byte menjadi
+                    4.324 byte) bukan error, melainkan Flutter membuang ikon yang tidak dipakai agar ukuran
+                    aplikasi lebih kecil. File APK ini dapat dikirim ke perangkat Android lalu dipasang.
+                </p>
+
+                <div class="sub-heading mt-4">5.10 Repository dan Video Penjelasan</div>
+                <p>
+                    Kode sumber aplikasi diunggah ke GitHub pada branch <code>praktikum-5</code> dari repository
+                    Praktikum Aplikasi Mobile.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Repository:</strong>
+                        <a href="https://github.com/amora14199/Praktikum-Aplikasi-Mobile/tree/praktikum-5" target="_blank" rel="noopener">https://github.com/amora14199/Praktikum-Aplikasi-Mobile/tree/praktikum-5</a>
+                    </li>
+                    <li class="mt-2">
+                        <strong>Video penjelasan dan file:</strong>
+                        <a href="https://drive.google.com/drive/folders/1qTgUpD74Qm_nhM0vxqri0puuoBp4oVB7" target="_blank" rel="noopener">https://drive.google.com/drive/folders/1qTgUpD74Qm_nhM0vxqri0puuoBp4oVB7</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-card" id="pembahasan">
+                <div class="section-heading">
+                    <span class="section-number">6</span> Pembahasan
+                </div>
+                <div class="sub-heading">6.1 Named Routes</div>
+                <p>
+                    Dengan Named Routes, seluruh daftar halaman dikumpulkan di satu tempat, yaitu properti
+                    <code>routes</code> pada <code>MaterialApp</code>. Setiap halaman dipanggil dengan nama
+                    string seperti <code>'/add'</code> atau <code>'/login'</code>. Dibandingkan memakai
+                    <code>Navigator.push</code> dengan <code>MaterialPageRoute</code> di setiap tombol, cara ini
+                    lebih ringkas, mengurangi pengulangan kode, dan jika nama atau tujuan halaman berubah, cukup
+                    diubah di satu tempat. Properti <code>initialRoute</code> menentukan halaman pertama yang
+                    dimuat: awalnya <code>'/'</code>, lalu diganti <code>'/login'</code> agar pengguna masuk
+                    lewat halaman login terlebih dahulu.
+                </p>
+
+                <div class="sub-heading mt-4">6.2 BottomNavigationBar dan State</div>
+                <p>
+                    <code>MainScreen</code> memakai <code>StatefulWidget</code> karena nilai tab aktif
+                    (<code>_selectedIndex</code>) berubah saat pengguna menekan menu. Setiap kali
+                    <code>setState</code> dipanggil, <code>body</code> pada Scaffold menampilkan widget sesuai
+                    <code>_pages[_selectedIndex]</code>. Dengan begitu perpindahan tab tidak membuat Scaffold
+                    baru, hanya isi body yang berganti, sehingga terasa seperti aplikasi modern.
+                </p>
+
+                <div class="sub-heading mt-4">6.3 Berbagi Data Antarhalaman</div>
+                <p>
+                    Pada tahap awal, data transaksi disimpan dalam list <code>daftarTransaksi</code> yang dipakai
+                    bersama oleh Dashboard dan Riwayat, sedangkan data pengguna disimpan melalui class
+                    <code>UserSession</code> dengan variabel <code>static</code> agar email dan nama dari halaman
+                    login dapat dibaca oleh Dashboard dan Profil. Keduanya tersimpan di memori sehingga hilang
+                    saat aplikasi ditutup. Pada versi akhir, sumber data dipindahkan ke database SQLite agar
+                    data tetap tersedia.
+                </p>
+
+                <div class="sub-heading mt-4">6.4 Penyimpanan Lokal dengan SQLite</div>
+                <p>
+                    SQLite adalah database relasional ringan yang tertanam di perangkat dan diakses melalui
+                    package <code>sqflite</code>. Seluruh operasi database bersifat asinkron
+                    (<code>Future</code> dan <code>await</code>) sehingga tampilan aplikasi tidak terhenti saat
+                    data dibaca atau ditulis. Dengan dua tabel yang dihubungkan oleh <code>user_id</code>, data
+                    pengguna dan transaksi tersimpan permanen, dan satu instance <code>DatabaseHelper</code>
+                    (<em>singleton</em>) dipakai oleh semua halaman sehingga tidak terjadi koneksi ganda.
+                </p>
+
+                <div class="sub-heading mt-4">6.5 Register, Login, dan Keamanan Password</div>
+                <p>
+                    Password diubah menjadi hash SHA-256 sebelum disimpan, sehingga password asli tidak terlihat
+                    langsung pada database. Saat login, password yang diketik di-hash lagi lalu dibandingkan
+                    dengan hash di database. Email diubah menjadi huruf kecil dan kolom email bersifat
+                    <code>UNIQUE</code> sehingga satu email hanya dapat didaftarkan sekali. Sebagai catatan
+                    pengembangan, hash tanpa <em>salt</em> masih sederhana; untuk aplikasi nyata sebaiknya
+                    dipakai algoritma khusus password seperti bcrypt atau Argon2.
+                </p>
+
+                <div class="sub-heading mt-4">6.6 Data Terpisah per Pengguna</div>
+                <p>
+                    Setiap transaksi menyimpan <code>user_id</code> pemiliknya dan <code>getTransaksi</code>
+                    hanya mengambil data dengan <code>user_id</code> yang sedang login. Karena itu akun yang
+                    berbeda tidak saling melihat transaksi, seperti terlihat pada perbandingan Gambar 26 dan
+                    Gambar 27.
+                </p>
+            </div>
+
+            <div class="content-card" id="kesimpulan">
+                <div class="section-heading">
+                    <span class="section-number">7</span> Kesimpulan
+                </div>
+                <div class="conclusion-box">
+                    <p>
+                        Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa penggunaan Named
+                        Routes membuat navigasi aplikasi lebih terpusat dan rapi, dan BottomNavigationBar yang
+                        dikombinasikan dengan StatefulWidget memungkinkan perpindahan antara halaman Beranda,
+                        Riwayat, dan Profil dalam satu Scaffold.
+                    </p>
+                    <p>
+                        Pada tahap akhir, penyimpanan lokal SQLite berhasil diterapkan sehingga data pengguna dan
+                        transaksi tidak lagi hilang saat aplikasi ditutup. Fitur register dan login juga berhasil
+                        dibuat dengan password yang disimpan dalam bentuk hash SHA-256, dan data transaksi
+                        dipisahkan per pengguna melalui kolom <code>user_id</code>. Seluruh hasil Praktikum 1
+                        sampai 5 telah digabungkan menjadi satu aplikasi Expense Tracker yang berhasil di-build
+                        menjadi file APK berukuran 48,9 MB, dengan kode sumber tersimpan pada repository GitHub
+                        branch <code>praktikum-5</code>.
+                    </p>
+                    <p class="mb-0">
+                        Pengembangan selanjutnya dapat berupa penambahan <em>salt</em> pada hash password, fitur
+                        ubah atau hapus transaksi, serta pengelolaan sesi login agar pengguna tidak perlu masuk
+                        ulang setiap membuka aplikasi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <div class="text-center mt-2 mb-4">
+                <a href="portfolio.html" class="btn back-btn">&larr; Kembali ke Portfolio</a>
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">sasyazmr</h5>
+                <p>Website Portofolio.</p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                    <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary">
+        <div class="text-center pb-3">
+            <a href="https://www.instagram.com/sasyaaazmr/" class="text-light text-decoration-none me-3">Instagram</a>
+            <p class="mb-0">&copy; 2025 Sasya Zamora</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth scroll for TOC -->
+<script>
+    document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 85, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
